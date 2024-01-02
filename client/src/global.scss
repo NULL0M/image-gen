@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Fugaz+One:wght@400&display=swap");
+body {
+  margin: 0;
+  line-height: normal;
+}
+:root {
+  /* fonts */
+  --font-fugaz-one: "Fugaz One";
+
+  /* font sizes */
+  --font-size-xs: 0.75rem;
+  --font-size-base: 1rem;
+  --font-size-3xs: 0.63rem;
+  --font-size-21xl: 2.5rem;
+  --font-size-45xl: 4rem;
+  --font-size-xl: 1.25rem;
+  --font-size-sm: 0.88rem;
+  --font-size-11xl: 1.88rem;
+  --font-size-13xl: 2rem;
+  --font-size-5xs: 0.5rem;
+  --font-size-31xl: 3.13rem;
+  --font-size-5xl: 1.5rem;
+  --font-size-33xl: 3.25rem;
+  --font-size-lg: 1.13rem;
+
+  /* Colors */
+  --color-white: #fff;
+  --fontcolorforgenerator: #919191;
+  --labelbacground: #2c2c2c;
+  --color-gray-100: #1e1e1e;
+  --color-gray-200: #131719;
+  --color-black: #000;
+  --color-gainsboro: #d9d9d9;
+  --color-lime: #00ff10;
+
+  /* Gaps */
+  --gap-0: 0rem;
+  --gap-3xs: 0.63rem;
+  --gap-31xl: 3.13rem;
+  --gap-6xs: 0.44rem;
+  --gap-298xl: 19.81rem;
+  --gap-81xl: 6.25rem;
+  --gap-61xl: 5rem;
+  --gap-17xl: 2.25rem;
+  --gap-xl: 1.25rem;
+  --gap-4xs: 0.56rem;
+  --gap-21xl: 2.5rem;
+  --gap-44xl: 3.94rem;
+  --gap-46xl: 4.06rem;
+  --gap-45xl: 4rem;
+  --gap-32xl: 3.19rem;
+  --gap-34xl: 3.31rem;
+  --gap-24xl: 2.69rem;
+  --gap-68xl: 5.44rem;
+  --gap-3xl: 1.38rem;
+  --gap-11xl: 1.88rem;
+  --gap-49xl: 4.25rem;
+
+  /* Paddings */
+  --padding-35xl: 3.38rem;
+  --padding-51xl: 4.38rem;
+  --padding-41xl: 3.75rem;
+  --padding-11xl: 1.88rem;
+  --padding-3xs: 0.63rem;
+  --padding-61xl: 5rem;
+  --padding-21xl: 2.5rem;
+  --padding-xl: 1.25rem;
+  --padding-43xl: 3.88rem;
+  --padding-80xl: 6.19rem;
+  --padding-5xs: 0.5rem;
+  --padding-4xs: 0.56rem;
+  --padding-8xs: 0.31rem;
+  --padding-45xl: 4rem;
+  --padding-18xl: 2.31rem;
+  --padding-12xs: 0.06rem;
+  --padding-64xl: 5.19rem;
+  --padding-111xl: 8.13rem;
+
+  /* Border radiuses */
+  --br-xl: 20px;
+  --br-3xs: 10px;
+}
