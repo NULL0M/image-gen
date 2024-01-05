@@ -1,7 +1,17 @@
 // image-gen/client/src/pages/Home.jsx
 
-import "./TheProject.scss";
+import AIImageCreator from "../components/AIImageCreator";
+import { AIImageGenerationContainer } from "../components/AIImageGenerationContainer";
 
-export default function Home() {
-  return <div>Home</div>;
-}
+import "./Home.scss";
+
+const Home = () => {
+  return (
+    <div className="home">
+      <AIImageCreator />
+      <AIImageGenerationContainer />
+    </div>
+  );
+};
+
+export default Home;

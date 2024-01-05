@@ -1,1 +1,10 @@
-
+.home {
+  position: relative;
+  background: linear-gradient(155.84deg, #15181a, #0a0c0e 44.92%, #0b1013);
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
