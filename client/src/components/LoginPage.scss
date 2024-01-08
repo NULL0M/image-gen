@@ -1,0 +1,173 @@
+@import '../styles/media-queries';
+@import '../styles/variables';
+@import '../styles/images';
+
+.loginpage {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--br-xl);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.6),
+    rgba(20, 24, 27, 0.6)
+  );
+  backdrop-filter: blur(25px);
+  padding: var(--padding-21xl) var(--padding-45xl);
+  gap: var(--gap-21xl);
+  text-align: left;
+  font-size: var(--font-size-13xl);
+  color: $color_1;
+  font-family: $font-family_2;
+  position: fixed;
+  top: 10%;
+  left: 30%;
+  z-index: 1000;
+  max-width: 80vw;
+  max-height: 80vh;
+
+  .loginpage-child {
+    cursor: pointer;
+    text-decoration: none;
+    align-self: stretch;
+    position: relative;
+    height: 7.3rem;
+    background-image: $background-image_1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+  }
+  .welcome-back-parent {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--gap-3xs);
+    .welcome-back {
+      margin: 0;
+      position: relative;
+      font-size: inherit;
+      font-weight: 400;
+      font-family: $font-family_1;
+      white-space: pre-wrap;
+    }
+    .please-enter-your-email {
+      margin: 0;
+      position: relative;
+      font-size: var(--font-size-xs);
+    }
+  }
+  .email-form {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+    flex-shrink: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--gap-3xs);
+    .email2 {
+      font-family: $font-family_2;
+      font-size: var(--font-size-xs);
+      position: relative;
+      text-align: left;
+      cursor: pointer;
+      color: $color_1;
+    }
+    .email-container {
+      display: flex;
+      justify-content: flex-start;
+      border-bottom: 1px solid var(--color-lime);
+      overflow: hidden;
+      flex-direction: row;
+      align-items: center;
+      padding: 0 var(--padding-8xs);
+      .email3 {
+        font-family: $font-family_2;
+        font-size: var(--font-size-xs);
+        position: relative;
+        text-align: left;
+        border: 0;
+        outline: 0;
+        background-color: $background-color_2;
+        color: $color_4;
+        display: inline-block;
+        width: 303px;
+        flex-shrink: 0;
+      }
+    }
+  }
+  .log-in-wrapper {
+    cursor: pointer;
+    border: 0;
+    padding: var(--padding-3xs);
+    background-color: $background-color_2;
+    border-radius: var(--br-3xs);
+    background: linear-gradient(90.36deg, #00ff10, rgba(204, 255, 0, 0.8));
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    .log-in {
+      position: relative;
+      font-size: var(--font-size-xs);
+      font-family: $font-family_2;
+      color: $color_2;
+      text-align: center;
+      display: inline-block;
+      width: 100px;
+      flex-shrink: 0;
+    }
+  }
+  .dont-have-an-account-yet-parent {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    width: 395px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: var(--padding-3xs) 43px;
+    gap: var(--gap-3xs);
+    font-size: var(--font-size-xs);
+    .dont-have-an {
+      margin: 0;
+      position: relative;
+      font-size: inherit;
+      font-weight: 400;
+      font-family: $font-family_1;
+    }
+    .registerButton {
+      cursor: pointer;
+      border: 0;
+      padding: var(--padding-3xs);
+      background-color: $background-color_2;
+      border-radius: var(--br-3xs);
+      background: linear-gradient(90.36deg, #00ff10, rgba(204, 255, 0, 0.8));
+      overflow: hidden;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      .loregisterButtonSubmit {
+        position: relative;
+        font-size: var(--font-size-xs);
+        font-family: $font-family_2;
+        color: $color_2;
+        text-align: center;
+        display: inline-block;
+        width: 100px;
+        flex-shrink: 0;
+      }
+    }
+  }
+}
