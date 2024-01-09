@@ -1,0 +1,42 @@
+@import "../styles/media-queries";
+@import "../styles/variables";
+
+.buttongenerateimage {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: $background-color_2;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  .ellipse-parent {
+    border-radius: var(--br-3xs);
+    background: linear-gradient(90.36deg, #00ff10, rgba(204, 255, 0, 0.8));
+    height: 2.44rem;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-3xs);
+    box-sizing: border-box;
+    gap: var(--gap-3xs);
+    .frame-item {
+      position: relative;
+      border-radius: 50%;
+      background-color: $background-color_1;
+      width: 0.06rem;
+      height: 0.06rem;
+    }
+    .generate-image {
+      position: relative;
+      font-size: var(--font-size-base);
+      font-family: $font-family_2;
+      color: $color_2;
+      text-align: left;
+    }
+  }
+}

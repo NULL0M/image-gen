@@ -3,7 +3,9 @@ import { ButtonStartCreating } from "./ButtonStartCreating";
 import ImageGeneration from "../assets/image-10@2x.png";
 import "./AIImageGenerationContainer.scss";
 
+// React component for the AIImageGenerationContainer.
 export const AIImageGenerationContainer = () => {
+  // Rendering the AIImageGenerationContainer with content and a call-to-action button.
   return (
     <section className="thefutureisai">
       <h2 className="a-fully-integrated">{`A fully integrated suite of image-generation tools  `}</h2>
