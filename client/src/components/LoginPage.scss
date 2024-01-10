@@ -27,11 +27,18 @@
   color: $color_1;
   font-family: $font-family_2;
   position: fixed;
-  top: 10%;
-  left: 30%;
+  top: 3rem;
+  left: 35%;
   z-index: 1000;
   max-width: 80vw;
   max-height: 80vh;
+  .close-button {
+    cursor: pointer;
+    position: relative;
+    top: 10%;
+    left: 14rem;
+    color: #00ff10;
+  }
 
   .loginpage-child {
     cursor: pointer;

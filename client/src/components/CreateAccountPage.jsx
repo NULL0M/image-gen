@@ -1,11 +1,13 @@
 import toast, { Toaster } from 'react-hot-toast'; //this is for popups after login
-
-import { Link, useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { MyContext } from '../contexts/context';
+import { IoMdCloseCircle } from 'react-icons/io';
+import { Link } from 'react-router-dom';
 
 import './CreateAccountPage.scss';
 
 export default function CreateAccountPage() {
-  const navigate = useNavigate();
+  const { user, closeModal } = useContext(MyContext);
 
   const register = (e) => {
     e.preventDefault();
@@ -37,6 +39,7 @@ export default function CreateAccountPage() {
   };
   return (
     <div className='createaccountpage'>
+      <IoMdCloseCircle className='close-button' onClick={closeModal} />
       <Link className='createaccountpage-child' to='/' />
       <div className='hello-there-parent'>
         <h2 className='hello-there'>Hello there!</h2>

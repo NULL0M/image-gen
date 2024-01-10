@@ -1,6 +1,6 @@
-@import "../styles/media-queries";
-@import "../styles/variables";
-@import "../styles/images";
+@import '../styles/media-queries';
+@import '../styles/variables';
+@import '../styles/images';
 
 .createaccountpage {
   overflow: hidden;
@@ -12,7 +12,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   border-radius: var(--br-xl);
   background: linear-gradient(
     180deg,
@@ -20,25 +20,32 @@
     rgba(20, 24, 27, 0.6)
   );
   backdrop-filter: blur(25px);
-  padding: var(--padding-21xl) var(--padding-45xl);
+  // padding: var(--padding-3xs) var(--padding-21xl);
   gap: var(--gap-21xl);
   text-align: left;
   font-size: var(--font-size-13xl);
   color: $color_1;
   font-family: $font-family_2;
   position: fixed;
-  top: 10%;
-  left: 30%;
+  top: 3rem;
+  left: 35%;
   z-index: 1;
-  max-width: 80vw;
-  max-height: 120vh;
+  width: 27vw;
+  height: 88vh;
+  .close-button {
+    cursor: pointer;
+    position: relative;
+    top: 5%;
+    left: 14rem;
+    color: #00ff10;
+  }
 
   .createaccountpage-child {
     cursor: pointer;
     text-decoration: none;
     align-self: stretch;
     position: relative;
-    height: 7.3rem;
+    height: 9.3rem;
     background-image: $background-image_1;
     background-size: cover;
     background-repeat: no-repeat;
