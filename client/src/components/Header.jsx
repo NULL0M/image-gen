@@ -1,7 +1,6 @@
 // src/components/Header.jsx
-
-import { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react'; // Importe 'useContext' do React
+import { Link } from 'react-router-dom'; // Importe 'Link' do pacote 'react-router-dom'
 import { MyContext } from '../contexts/context';
 import Logo from '../assets/imageAIGeneratorLogo.png';
 import LoginPage from './LoginPage';
@@ -9,24 +8,17 @@ import CreateAccountPage from './CreateAccountPage';
 import './Header.scss';
 
 function Header({ onHomeTextClick, onGenerateTextClick, onTheProjectClick }) {
-  //
+  const { user, showRegister, showLogin, setShowRegister, setShowLogin } =
+    useContext(MyContext);
 
-  const { user } = useContext(MyContext);
-  const [showRegister, setShowRegister] = useState(false);
-  // Local state to control the display of the login modal
-  const [showLogin, setShowLogin] = useState(false);
-
-  // Function to open the login modal
   const openLoginModal = () => {
     setShowLogin(true);
     setShowRegister(false);
   };
+
   const openRegisterModal = () => {
     setShowRegister(true);
     setShowLogin(false);
-  };
-  const closeRegisterModal = () => {
-    setShowRegister(false); // Set showRegister to false
   };
   //
   // Function to close the login modal
@@ -34,6 +26,10 @@ function Header({ onHomeTextClick, onGenerateTextClick, onTheProjectClick }) {
     {
       showLogin && <LoginPage onClose={closeLoginModal} />;
     }
+  };
+  // Descomente a definição da função
+  const closeRegisterModal = () => {
+    setShowRegister(false);
   };
 
   return (

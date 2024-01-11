@@ -1,24 +1,27 @@
 // client/src/components/LoginPage.jsx
 import { useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { MyContext } from '../contexts/context';
+import { IoMdCloseCircle } from 'react-icons/io';
 import './LoginPage.scss';
 
-export default function LoginPage({ openRegisterModal }) {
-  const { setUser } = useContext(MyContext);
-  const navigate = useNavigate();
+export default function LoginPage({ openRegisterModal, onClose }) {
+  const { user, closeModal } = useContext(MyContext);
 
   const loginUser = (e) => {
     e.preventDefault();
     const loginInfo = {
       email: e.target.email.value,
       password: e.target.password.value,
-      onClose: onClose,
     };
+
+    // Feche o modal de login
+    onClose();
   };
 
   return (
     <div className='loginpage'>
+      <IoMdCloseCircle className='close-button' onClick={closeModal} />
       <Link className='loginpage-child' to='/' />
       <div className='welcome-back-parent'>
         <h2 className='welcome-back'>{`Welcome  back `}</h2>
