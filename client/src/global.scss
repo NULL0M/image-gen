@@ -1,12 +1,29 @@
-@import url("https://fonts.googleapis.com/css2?family=Fugaz+One:wght@400&display=swap");
+@font-face {
+  font-family: 'Fugaz One';
+  src: url('fonts/FugazOne-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
 body {
+  font-family: 'Fugaz One', sans-serif; /* Use your custom font here */
   margin: 0;
   line-height: normal;
 }
-:root {
-  /* fonts */
-  --font-fugaz-one: "Fugaz One";
+// @font-face {
+//   font-family: 'Roboto';
+//   src: url('fonts/Roboto-Regular.ttf') format('truetype');
+//   font-weight: 400;
+//   font-style: normal;
+// }
 
+// body {
+//   font-family: 'Roboto', sans-serif; /* Use your custom font here */
+//   margin: 0;
+//   line-height: normal;
+// }
+
+:root {
   /* font sizes */
   --font-size-xs: 0.75rem;
   --font-size-base: 1rem;
