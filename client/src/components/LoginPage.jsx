@@ -32,7 +32,8 @@ export default function LoginPage({ openRegisterModal }) {
         </p>
       </div>
       <form className='email-form' action='' onSubmit={loginUser}>
-        <label clThe ProjectassName='email2'>User Name</label>
+        <label className='email2'>User Name</label>
+
         <span className='email-container'>
           <input
             className='email3'
