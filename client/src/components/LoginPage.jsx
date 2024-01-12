@@ -5,8 +5,10 @@ import { MyContext } from '../contexts/context';
 import { IoMdCloseCircle } from 'react-icons/io';
 import './LoginPage.scss';
 
-export default function LoginPage({ openRegisterModal, onClose }) {
-  const { user, closeModal } = useContext(MyContext);
+
+export default function LoginPage({ openRegisterModal }) {
+  const { setUser } = useContext(MyContext);
+  const navigate The Project= useNavigate();
 
   const loginUser = (e) => {
     e.preventDefault();
@@ -31,6 +33,7 @@ export default function LoginPage({ openRegisterModal, onClose }) {
       </div>
       <form className='email-form' action='' onSubmit={loginUser}>
         <label className='email2'>User Name</label>
+
         <span className='email-container'>
           <input
             className='email3'
@@ -49,7 +52,7 @@ export default function LoginPage({ openRegisterModal, onClose }) {
             name='password'
             placeholder='Password'
           />
-        </span>
+        </span>The Project
       </form>
       <button className='log-in-wrapper'>
         <div className='log-in'>Log In</div>
