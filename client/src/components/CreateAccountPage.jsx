@@ -22,20 +22,6 @@ export default function CreateAccountPage() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(user),
     });
-    // .then((res) => res.json())
-    // .then((result) => {
-    //   if (result.errors) {
-    //     console.log(result.errors);
-    //     toast.error(JSON.stringify(result.erros)); //this is to pop up the error message
-    //   } else {
-    //     e.target.reset();
-    //     toast.success("you successfully registered"); //this is to pop up the error message
-    //     setTimeout(() => {
-    //       navigate("/login"); //this is navigate to login page
-    //     }, 1500);
-    //   }
-    // })
-    // .catch((err) => console.log(err));
   };
   return (
     <div className='createaccountpage'>
@@ -83,9 +69,11 @@ export default function CreateAccountPage() {
             <input className='frame-child' required={true} type='checkbox' />
             <p className='i-agree-to-container'>
               <span>{`I agree to ImageAIGenerator `}</span>
-              <span className='terms-and-privacy'>
-                Terms and Privacy Policy
-              </span>
+              <Link to='/termsandprivacypolicy' target='_blank'>
+                <span className='terms-and-privacy'>
+                  Terms and Privacy Policy
+                </span>
+              </Link>
             </p>
           </div>
           <button className='registerButton'>

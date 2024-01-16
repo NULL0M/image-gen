@@ -69,7 +69,7 @@ export const TextToImageGenerator = () => {
       setLoading(true);
       try {
         const response = await fetch(
-          // "https://dalle-arbb.onrender.com/api/v1/post",
+          // Correct endpoint for image generation
           'http://localhost:8080/api/v1/dalle',
           {
             method: 'POST',

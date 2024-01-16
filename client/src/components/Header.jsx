@@ -7,7 +7,7 @@ import LoginPage from './LoginPage';
 import CreateAccountPage from './CreateAccountPage';
 import './Header.scss';
 
-function Header({ onHomeTextClick, onGenerateTextClick, onTheProjectClick }) {
+function Header() {
   const { user, showRegister, showLogin, setShowRegister, setShowLogin } =
     useContext(MyContext);
 
@@ -39,23 +39,32 @@ function Header({ onHomeTextClick, onGenerateTextClick, onTheProjectClick }) {
         <div className='navegationbar-wrapper'>
           <nav className='navegationbar'>
             <div className='menulinks'>
-              <Link className='genarate' to='/' onClick={onHomeTextClick}>
+              <Link
+                className='genarate'
+                to='/'
+                // onClick={onHomeTextClick}
+              >
                 Home
               </Link>
               <Link
                 className='genarate'
                 to='/createpost'
-                onClick={onGenerateTextClick}>
+                // onClick={onGenerateTextClick}
+              >
                 Generate
               </Link>
               <Link
                 className='genarate'
                 to='/theproject'
-                onClick={onTheProjectClick}>
+                // onClick={onTheProjectClick}
+              >
                 The Project
               </Link>
               <Link className='genarate' onClick={openLoginModal}>
                 Log In
+              </Link>
+              <Link className='genarate' to='/userpage'>
+                User Page
               </Link>
               {/* <CreateFreeAccount /> */}
             </div>

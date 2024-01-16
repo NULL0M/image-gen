@@ -1,0 +1,94 @@
+@import '../styles/media-queries';
+@import '../styles/variables';
+
+.discovertheai {
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  align-self: stretch;
+  background: linear-gradient(0deg, #000, #14181b);
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: var(--padding-18xl) 0 0;
+  text-align: center;
+  font-size: var(--font-size-45xl);
+  color: $color_1;
+  font-family: $font-family_2;
+  .discovertheai1 {
+    align-self: stretch;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .discover-the-ai {
+      margin: 0;
+      align-self: stretch;
+      position: relative;
+      font-size: inherit;
+      line-height: 124.93%;
+      font-weight: 400;
+      font-family: $font-family_1;
+    }
+  }
+  .form-search {
+    margin: 0;
+    width: 80%;
+    align-self: stretch;
+    border-radius: var(--br-xl);
+    background-color: $background-color_3;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    padding: var(--padding-5xs) var(--padding-xl) var(--padding-4xs);
+    gap: var(--gap-31xl);
+    opacity: 0.8;
+    .describe-search {
+      border: 0;
+      outline: 0;
+      font-family: $font-family_2;
+      font-size: var(--font-size-sm);
+      background-color: $background-color_2;
+      flex: 1;
+      position: relative;
+      color: $color_4;
+      text-align: left;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+  .imagesContainer {
+    .loaderSearch {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .showingResults {
+      font-size: inherit;
+      font-weight: 400;
+      font-family: $font-family_1;
+      color: $color_1;
+      .text {
+        background: linear-gradient(90.36deg, #00ff10, rgba(204, 255, 0, 0.8));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+
+    .grid-container {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+.mt-5 {
+  font-size: inherit;
+  line-height: 124.93%;
+  font-weight: 400;
+  font-family: inherit;
+}
