@@ -5,7 +5,7 @@ import { MyContext } from './context';
 export default function Container({ children }) {
   const [showRegister, setShowRegister] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
-
+  const [selectedComponent, setSelectedComponent] = useState('userphotos');
   const closeModal = () => {
     setShowRegister(false);
     setShowLogin(false);
@@ -17,6 +17,8 @@ export default function Container({ children }) {
     setShowRegister,
     setShowLogin,
     closeModal,
+    selectedComponent,
+    setSelectedComponent,
   };
 
   return (

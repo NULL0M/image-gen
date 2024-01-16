@@ -1,0 +1,39 @@
+$color_1: inherit;
+$color_2: var(--color-white);
+$font-family_1: var(--font-fugaz-one);
+
+.userlibrary {
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-3xs);
+  color: $color_1;
+}
+.about-me {
+  position: relative;
+}
+.userabout {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-3xs);
+  color: $color_1;
+}
+.usermenu {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  align-self: stretch;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-7xs);
+  text-align: left;
+  font-size: var(--font-size-xs);
+  color: $color_2;
+  font-family: $font-family_1;
+}
