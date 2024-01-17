@@ -2,6 +2,7 @@
 
 import AIImageCreator from "../components/AIImageCreator";
 import { AIImageGenerationContainer } from "../components/AIImageGenerationContainer";
+import { Footer } from "../components/Footer";
 
 import "./Home.scss";
 
@@ -10,6 +11,8 @@ const Home = () => {
     <div className="home">
       <AIImageCreator />
       <AIImageGenerationContainer />
+      {/* Rendering the Footer component for maintaining a consistent page layout */}
+      <Footer />
     </div>
   );
 };
