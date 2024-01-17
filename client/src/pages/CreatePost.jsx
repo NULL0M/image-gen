@@ -1,5 +1,6 @@
 //image-gen/client/src/pages/CreatePost.jsx
 import { TextToImageGenerator } from '../components/TextToImageGenerator';
+import { WhatIsAiImageGeneratorContainer } from '../components/WhatIsAiImageGeneratorContainer';
 
 import './CreatePost.scss';
 
@@ -10,6 +11,9 @@ const CreatePost = () => {
     <div className='theproject'>
       {/* Component for converting text to images */}
       <TextToImageGenerator />
+
+      {/* Container component explaining the AI image generation process */}
+      <WhatIsAiImageGeneratorContainer />
     </div>
   );
 };
