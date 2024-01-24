@@ -62,6 +62,8 @@
     }
 
     .formToGenerate {
+      display: flex;
+      flex-direction: column;
       margin-top: 4rem;
       max-width: 80rem;
       .form-generator {

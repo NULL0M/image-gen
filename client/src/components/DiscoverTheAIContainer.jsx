@@ -1,46 +1,49 @@
-//src/components/DiscoverTheAIContainer.jsx
-import React from 'react';
-
-import { useEffect, useState } from 'react';
+// src/components/DiscoverTheAIContainer.jsx
+import React, { useEffect, useState } from 'react';
 import Card from './Card';
-import Loader from './Loader';
-
-import './DiscoverTheAIContainer.scss';
 import { ButtonStartCreating } from './ButtonStartCreating';
+import './DiscoverTheAIContainer.scss';
 
+// Custom reusable component to render list of Card components
 const RenderCards = ({ data, title }) => {
+  const getPositionInGrid = (index) => {
+    return (index % 21) + 1; // Considering a grid of 21 columns
+  };
+
   if (data?.length > 0) {
-    return data.map((post) => <Card key={post._id} {...post} />);
+    return data.map((post, index) => (
+      <Card
+        key={post._id}
+        {...post}
+        positionInGrid={getPositionInGrid(index)}
+      />
+    ));
   }
   return <h2 className='mt-5'>{title}</h2>;
 };
 
 const DiscoverTheAIContainer = () => {
-  // State variables for managing loading state, fetched posts, search text, and results.
   const [loading, setLoading] = useState(true);
   const [allPosts, setAllPosts] = useState(null);
-  const [searchText, setSearchText] = useState('');
-  const [searchTimeout, setSearchTimeout] = useState(null);
   const [searchedResults, setSearchedResults] = useState(null);
+  const [searchText, setSearchText] = useState('');
 
-  // Function to fetch posts from the API and handle loading states.
+  const handleSearchChange = (e) => {
+    setSearchText(e.target.value);
+  };
+
   const fetchPosts = async () => {
     setLoading(true);
     try {
-      const response = await fetch(
-        // "https://dalle-arbb.onrender.com/api/v1/post",
-        'http://localhost:8080/api/v1/dalle',
-        {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        }
-      );
+      const response = await fetch('http://localhost:8090/api/v1/post', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
 
       if (response.ok) {
         const result = await response.json();
-        // Updating state with reversed data if available, else logging an error.
         if (result.data) {
           setAllPosts(result.data.reverse());
         } else {
@@ -48,33 +51,21 @@ const DiscoverTheAIContainer = () => {
         }
       }
     } catch (err) {
-      // Displaying an alert for any fetch error.
       alert(err);
     } finally {
       setLoading(false);
     }
   };
 
-  // useEffect hook to fetch posts on component mount.
   useEffect(() => {
     fetchPosts();
   }, []);
 
-  // Function to handle search text changes and filter posts accordingly.
-  const handleSearchChange = (e) => {
-    clearTimeout(searchTimeout);
-    setSearchText(e.target.value);
+  // Calculate the number of grids needed based on the number of photos
+  const numGrids = Math.ceil((allPosts?.length || 0) / 21);
 
-    // Setting a timeout for a delayed search to avoid frequent API calls.
-    setSearchTimeout(() => {
-      const searchResult = allPosts.filter(
-        (item) =>
-          item.name.toLowerCase().includes(e.target.value.toLowerCase()) ||
-          item.prompt.toLowerCase().includes(e.target.value.toLowerCase())
-      );
-      setSearchedResults(searchResult);
-    }, 1000);
-  };
+  // Create an array of grid indices to map over
+  const gridIndices = Array.from({ length: numGrids }, (_, index) => index);
 
   return (
     <section className='discovertheai'>
@@ -88,34 +79,24 @@ const DiscoverTheAIContainer = () => {
           className='describe-search '
           placeholder='Search something...'
           value={searchText}
-          onChange={handleSearchChange}
+          onChange={(e) => handleSearchChange(e)}
         />
       </div>
 
       <div className='imagesContainer'>
-        {loading ? (
-          <div className='loaderSearch'>
-            <Loader />
-          </div>
-        ) : (
-          <>
-            {searchText && (
-              <h2 className='showingResults'>
-                Showing Results for: <span className='text'>{searchText}</span>
-              </h2>
+        {gridIndices.map((gridIndex) => (
+          <React.Fragment key={gridIndex}>
+            {gridIndex > 0 && (
+              <h2 className='showingResults'>Next Set of Photos</h2>
             )}
             <div className='grid-container'>
-              {searchText ? (
-                <RenderCards
-                  data={searchedResults}
-                  title='No Search Results Found'
-                />
-              ) : (
-                <RenderCards data={allPosts} title='No Posts Yet' />
-              )}
+              <RenderCards
+                data={allPosts?.slice(gridIndex * 21, (gridIndex + 1) * 21)}
+                title={`No Posts Yet in Grid ${gridIndex + 1}`}
+              />
             </div>
-          </>
-        )}
+          </React.Fragment>
+        ))}
       </div>
 
       <ButtonStartCreating />

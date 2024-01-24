@@ -4,7 +4,7 @@
 .discovertheai {
   overflow: hidden;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   align-self: stretch;
   background: linear-gradient(0deg, #000, #14181b);
   flex-direction: column;
@@ -14,6 +14,8 @@
   font-size: var(--font-size-45xl);
   color: $color_1;
   font-family: $font-family_2;
+  margin-bottom: 5rem;
+
   .discovertheai1 {
     align-self: stretch;
     overflow: hidden;
@@ -21,6 +23,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
     .discover-the-ai {
       margin: 0;
       align-self: stretch;
@@ -31,21 +34,23 @@
       font-family: $font-family_1;
     }
   }
+
   .form-search {
-    margin: 0;
-    width: 80%;
-    align-self: stretch;
-    border-radius: var(--br-xl);
-    background-color: $background-color_3;
-    overflow: hidden;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-start;
+    align-self: stretch;
+    overflow: hidden;
+    width: 80%;
     padding: var(--padding-5xs) var(--padding-xl) var(--padding-4xs);
     gap: var(--gap-31xl);
+    border-radius: var(--br-xl);
+    background-color: $background-color_3;
     opacity: 0.8;
+    margin: 2rem;
+
     .describe-search {
       border: 0;
       outline: 0;
@@ -61,17 +66,20 @@
       white-space: nowrap;
     }
   }
+
   .imagesContainer {
     .loaderSearch {
       display: flex;
       justify-content: center;
       align-items: center;
     }
+
     .showingResults {
       font-size: inherit;
       font-weight: 400;
       font-family: $font-family_1;
       color: $color_1;
+
       .text {
         background: linear-gradient(90.36deg, #00ff10, rgba(204, 255, 0, 0.8));
         -webkit-background-clip: text;
@@ -81,14 +89,80 @@
 
     .grid-container {
       display: grid;
-      gap: 1rem;
-      grid-template-columns: repeat(3, 1fr);
+      grid-auto-columns: 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+      gap: 0.5rem 0.5rem;
+      grid-template-areas:
+        'Img1 Img1 Img2 Img3 Img6 Img6'
+        'Img1 Img1 Img4 Img5 Img6 Img6'
+        'Img7 Img8 Img11 Img11 Img12 Img13'
+        'Img9 Img10 Img11 Img11 Img14 Img15'
+        'Img16 Img18 Img18 Img19 Img19 Img20'
+        'Img17 Img18 Img18 Img19 Img19 Img21';
+    }
+    .Img1 {
+      grid-area: Img1;
+    }
+    .Img2 {
+      grid-area: Img2;
+    }
+    .Img3 {
+      grid-area: Img3;
+    }
+    .Img4 {
+      grid-area: Img4;
+    }
+    .Img5 {
+      grid-area: Img5;
+    }
+    .Img6 {
+      grid-area: Img6;
+    }
+    .Img7 {
+      grid-area: Img7;
+    }
+    .Img8 {
+      grid-area: Img8;
+    }
+    .Img9 {
+      grid-area: Img9;
+    }
+    .Img10 {
+      grid-area: Img10;
+    }
+    .Img11 {
+      grid-area: Img11;
+    }
+    .Img12 {
+      grid-area: Img12;
+    }
+    .Img13 {
+      grid-area: Img13;
+    }
+    .Img14 {
+      grid-area: Img14;
+    }
+    .Img15 {
+      grid-area: Img15;
+    }
+    .Img16 {
+      grid-area: Img16;
+    }
+    .Img17 {
+      grid-area: Img17;
+    }
+    .Img18 {
+      grid-area: Img18;
+    }
+    .Img19 {
+      grid-area: Img19;
+    }
+    .Img20 {
+      grid-area: Img20;
+    }
+    .Img21 {
+      grid-area: Img21;
     }
   }
-}
-.mt-5 {
-  font-size: inherit;
-  line-height: 124.93%;
-  font-weight: 400;
-  font-family: inherit;
 }
