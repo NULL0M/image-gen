@@ -1,10 +1,9 @@
 // image-gen/client/src/pages/Home.jsx
 
-
-import AIImageCreator from "../components/AIImageCreator";
-import { AIImageGenerationContainer } from "../components/AIImageGenerationContainer";
-import { Footer } from "../components/Footer";
-
+import AIImageCreator from '../components/AIImageCreator';
+import { AIImageGenerationContainer } from '../components/AIImageGenerationContainer';
+import DiscoverTheAIContainer from '../components/DiscoverTheAIContainer';
+import { Footer } from '../components/Footer';
 
 import './Home.scss';
 
@@ -13,11 +12,11 @@ const Home = () => {
     <div className='home'>
       <AIImageCreator />
       <AIImageGenerationContainer />
-    
+
       <DiscoverTheAIContainer />
       {/* Rendering the Footer component for maintaining a consistent page layout */}
-     
-         <Footer />
+
+      {/* <Footer /> */}
     </div>
   );
 };
