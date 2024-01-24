@@ -38,7 +38,7 @@ export const TextToImageGenerator = () => {
         setGeneratingImg(true);
         const response = await fetch(
           // Correct endpoint for image generation
-          'http://localhost:8080/api/v1/dalle',
+          'http://localhost:8090/api/v1/dalle',
           {
             method: 'POST',
             headers: {
@@ -67,24 +67,32 @@ export const TextToImageGenerator = () => {
 
     if (form.prompt && form.photo) {
       setLoading(true);
-      try {
-        const response = await fetch(
-          // Correct endpoint for image generation
-          'http://localhost:8080/api/v1/dalle',
-          {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ ...form }),
-          }
-        );
 
-        await response.json();
+      try {
+        const response = await fetch('http://localhost:8090/api/v1/post', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ ...form }),
+        });
+
+        // Handle non-success responses
+        if (!response.ok) {
+          throw new Error(`Server responded with ${response.status} status`);
+        }
+
+        // Only try to parse json if response is ok
+        const data = await response.json();
+
         alert('Success');
         navigate('/');
       } catch (err) {
-        alert(err);
+        // Log useful debug info
+        console.log('Error creating post', err);
+
+        // Show generic alert
+        alert('Error creating post - please try again');
       } finally {
         setLoading(false);
       }
@@ -92,7 +100,6 @@ export const TextToImageGenerator = () => {
       alert('Please generate an image with proper details');
     }
   };
-
   return (
     <main className='main2'>
       <Header />
@@ -116,15 +123,6 @@ export const TextToImageGenerator = () => {
 
         <form className='formToGenerate' onSubmit={handleSubmit}>
           <div className='form-generator'>
-            {/* <FormField
-              labelName='Your Name'
-              type='text'
-              name='name'
-              placeholder='Ex., john doe'
-              value={form.name}
-              handleChange={handleChange}
-            /> */}
-
             <FormField
               labelName='Prompt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or ->'
               type='text'

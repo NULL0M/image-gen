@@ -1,18 +1,18 @@
 // src/components/Footer.jsx
 
-import { FaRegEnvelope } from "react-icons/fa";
-import { FaArrowRight } from "react-icons/fa";
-import { SlSocialInstagram } from "react-icons/sl";
-import { TiSocialTwitter } from "react-icons/ti";
-import { TiSocialInstagram } from "react-icons/ti";
-import { SlSocialFacebook } from "react-icons/sl";
-import "./Footer.scss";
+import { FaRegEnvelope } from 'react-icons/fa';
+import { FaArrowRight } from 'react-icons/fa';
+import { SlSocialInstagram } from 'react-icons/sl';
+import { TiSocialTwitter } from 'react-icons/ti';
+import { TiSocialInstagram } from 'react-icons/ti';
+import { SlSocialFacebook } from 'react-icons/sl';
+import './Footer.scss';
 export const Footer = () => {
   return (
-    <footer className="footer">
-      <div class="row">
-        <div class="col">
-          <img src="../assets/imageAIGeneratorLogo.png" alt="logo" />
+    <footer className='footer'>
+      <div className='row'>
+        <div className='col'>
+          <img src='../assets/imageAIGeneratorLogo.png' alt='logo' />
           <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit.
             Asperiores, ratione ipsam repellat, iure dolore quas error doloribus
@@ -20,45 +20,63 @@ export const Footer = () => {
             soluta repellendus fugit libero?
           </p>
         </div>
-        <div class="col">
-          <h3>Office <div className="underline"> <span></span></div></h3>
+        <div className='col'>
+          <h3>
+            Office{' '}
+            <div className='underline'>
+              {' '}
+              <span></span>
+            </div>
+          </h3>
           <p>itpl Road</p>
           <p>Adresse</p>
           <p>land</p>
-          <p class="email-id">drywurts@gmail.com</p>
+          <p className='email-id'>drywurts@gmail.com</p>
           <h4>0800666777</h4>
         </div>
-        <div class="col">
-          <h3>Links <div className="underline"> <span></span></div></h3>
+        <div className='col'>
+          <h3>
+            Links{' '}
+            <div className='underline'>
+              {' '}
+              <span></span>
+            </div>
+          </h3>
           <ul>
             <li>
-              <a href="">Home</a>
+              <a href=''>Home</a>
             </li>
             <li>
-              <a href="">Services</a>
+              <a href=''>Services</a>
             </li>
             <li>
-              <a href="">About</a>
+              <a href=''>About</a>
             </li>
             <li>
-              <a href="">Features</a>
+              <a href=''>Features</a>
             </li>
             <li>
-              <a href="">Home</a>
+              <a href=''>Home</a>
             </li>
           </ul>
         </div>
-        <div class="col">
-          <h3>Newsletter <div className="underline"> <span></span></div></h3>
+        <div className='col'>
+          <h3>
+            Newsletter{' '}
+            <div className='underline'>
+              {' '}
+              <span></span>
+            </div>
+          </h3>
           <form>
             <FaRegEnvelope />
-            <input type="email" placeholder="Enter you email id" required />
-            <button type="sumit">
-              {" "}
-              <FaArrowRight />{" "}
+            <input type='email' placeholder='Enter you email id' required />
+            <button type='sumit'>
+              {' '}
+              <FaArrowRight />{' '}
             </button>
           </form>
-          <div class="social-icons">
+          <div className='social-icons'>
             <SlSocialInstagram />
             <TiSocialTwitter />
             <TiSocialInstagram />
@@ -67,8 +85,7 @@ export const Footer = () => {
         </div>
       </div>
       <hr />
-      <p className="copyright"> All rights reserved AI imageGenerator© 2024 </p>
-
+      <p className='copyright'> All rights reserved AI imageGenerator© 2024 </p>
 
       {/* <div className="subfooter">
         <div className="theteam">

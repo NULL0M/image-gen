@@ -159,6 +159,8 @@
     height: auto;
   }
 }
+
+// DiscoverTheAIContainer
 @media screen and (max-width: 960px) {
   .discover-the-ai {
     font-size: var(--font-size-31xl);
@@ -230,6 +232,28 @@
     box-sizing: border-box;
   }
 }
+/* Estilos para o breakpoint lg (large) */
+@media (min-width: 1024px) {
+  .lg\:grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Estilos para o breakpoint sm (small) */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .sm\:grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Estilos para o breakpoint xs (extra small) */
+@media (max-width: 639px) {
+  .xs\:grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+// TextToImageGenerator
 
 @media screen and (max-width: 1200px) {
   .generatorcontainer {
@@ -375,5 +399,24 @@
     padding-left: 0;
     padding-right: var(--padding-21xl);
     box-sizing: border-box;
+  }
+}
+
+// header
+
+@media screen and (max-width: 960px) {
+  .menulinks {
+    display: none;
+  }
+  .burguermenu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-right: var(--padding-21xl);
+    box-sizing: border-box;
+  }
+  .navegationbar {
+    display: none;
   }
 }
