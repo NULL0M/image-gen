@@ -3,6 +3,7 @@
 
 import AIImageCreator from "../components/AIImageCreator";
 import { AIImageGenerationContainer } from "../components/AIImageGenerationContainer";
+import DiscoverTheAIContainer from "../components/DiscoverTheAIContainer";
 import { Footer } from "../components/Footer";
 
 
