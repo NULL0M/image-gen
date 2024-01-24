@@ -32,7 +32,7 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    font-size: var(--font-size-21xl);
+    font-size: var(--font-size-45xl);
     .thefutureisaiimage {
       flex: 1;
       overflow: hidden;
@@ -93,7 +93,7 @@
           .ai-powered-image-generation-container {
             margin: 0;
             position: relative;
-            font-size: var(--font-size-base);
+            font-size: var(--font-size-xl);
             text-align: left;
             display: inline-block;
             width: 23.19rem;

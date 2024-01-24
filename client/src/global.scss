@@ -1,27 +1,41 @@
-@font-face {
-  font-family: 'Fugaz One';
-  src: url('fonts/FugazOne-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-
-body {
-  font-family: 'Fugaz One', sans-serif; /* Use your custom font here */
-  margin: 0;
-  line-height: normal;
-}
 // @font-face {
-//   font-family: 'Roboto';
-//   src: url('fonts/Roboto-Regular.ttf') format('truetype');
+//   font-family: 'Fugaz One';
+//   src: url('fonts/FugazOne-Regular.ttf') format('truetype');
+//   font-weight: 400;
+//   font-style: normal;
+// }
+
+//  body {
+//    font-family: 'Fugaz One', sans-serif; /* Use your custom font here */
+//    margin: 0;
+//    line-height: normal;
+//  }
+
+// @font-face {
+//   font-family: "Roboto";
+//   src: url("fonts/Roboto-Regular.ttf") format("truetype");
 //   font-weight: 400;
 //   font-style: normal;
 // }
 
 // body {
-//   font-family: 'Roboto', sans-serif; /* Use your custom font here */
+//   font-family: "Roboto", sans-serif; /* Use your custom font here */
 //   margin: 0;
 //   line-height: normal;
 // }
+
+@font-face {
+  font-family: "Pathway Gothic One";
+  src: url("fonts/PathwayGothicOne-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Pathway Gothic One', sans-serif;
+  margin: 0;
+  line-height: normal;
+}
 
 :root {
   /* font sizes */
@@ -39,6 +53,7 @@ body {
   --font-size-5xl: 1.5rem;
   --font-size-33xl: 3.25rem;
   --font-size-lg: 1.13rem;
+  --font-size-lg1: 1.20rem;
 
   /* Colors */
   --color-white: #fff;

@@ -30,7 +30,9 @@
       justify-content: flex-start;
       gap: var(--gap-xl);
       text-align: left;
-      font-size: var(--font-size-xs);
+
+      font-size: var(--font-size-xl);
+
       color: $color_1;
       font-family: $font-family_2;
       overflow: hidden;
@@ -46,7 +48,10 @@
         gap: var(--gap-xl);
         .genarate {
           position: relative;
+
+
           cursor: pointer;
+
           flex-shrink: 0;
           display: flex;
           flex-direction: row;
@@ -62,7 +67,22 @@
   }
 }
 
-.home2 {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*.home2 {
   position: relative;
 }
 .home1 {
@@ -96,3 +116,4 @@
   box-sizing: border-box;
   gap: var(--gap-4xs);
 }
+*/
