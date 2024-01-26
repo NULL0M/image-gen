@@ -72,6 +72,9 @@
       font-size: var(--font-size-xs);
     }
   }
+  form {
+    border: 0;
+  }
   .email-form {
     display: flex;
     justify-content: flex-start;

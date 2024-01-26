@@ -1,3 +1,11 @@
+// reset the state of the styles
+:root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0;
+}
+
 // @font-face {
 //   font-family: 'Fugaz One';
 //   src: url('fonts/FugazOne-Regular.ttf') format('truetype');
@@ -25,8 +33,8 @@
 // }
 
 @font-face {
-  font-family: "Pathway Gothic One";
-  src: url("fonts/PathwayGothicOne-Regular.ttf") format("truetype");
+  font-family: 'Pathway Gothic One';
+  src: url('fonts/PathwayGothicOne-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
@@ -53,21 +61,24 @@ body {
   --font-size-5xl: 1.5rem;
   --font-size-33xl: 3.25rem;
   --font-size-lg: 1.13rem;
-  --font-size-lg1: 1.20rem;
+  --font-size-lg1: 1.2rem;
 
   /* Colors */
   --color-white: #fff;
   --fontcolorforgenerator: #919191;
   --labelbacground: #2c2c2c;
   --color-gray-100: #1e1e1e;
-  --color-gray-200: #131719;
+  --color-gray-200: rgba(11, 13, 14);
+  --color-gray-300: #242424;
   --color-black: #000;
   --color-gainsboro: #d9d9d9;
   --color-lime: #00ff10;
+  --color-menu-event: #c7f80d;
+  --color-menu-event-transition: #55650a;
 
   /* Gaps */
   --gap-0: 0rem;
-  --gap-3xs: 0.63rem;
+  --gap-3xs: 0.625rem;
   --gap-31xl: 3.13rem;
   --gap-6xs: 0.44rem;
   --gap-298xl: 19.81rem;
@@ -93,7 +104,7 @@ body {
   --padding-51xl: 4.38rem;
   --padding-41xl: 3.75rem;
   --padding-11xl: 1.88rem;
-  --padding-3xs: 0.63rem;
+  --padding-3xs: 0.625rem;
   --padding-61xl: 5rem;
   --padding-21xl: 2.5rem;
   --padding-xl: 1.25rem;
@@ -109,6 +120,7 @@ body {
   --padding-111xl: 8.13rem;
 
   /* Border radiuses */
-  --br-xl: 20px;
   --br-3xs: 10px;
+  --br-xl: 20px;
+  --br-xxl: 30px;
 }
