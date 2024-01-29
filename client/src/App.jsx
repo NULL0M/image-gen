@@ -9,6 +9,7 @@ import CreatePost from './pages/CreatePost';
 import UserPage from './pages/UserPage';
 import TheProject from './pages/TheProject';
 import TermsAndPrivacyPolicy from './pages/TermsAndPrivacyPolicy';
+import ForgotPassword from './pages/forgotPassword';
 
 // Main application component, responsible for defining the app structure and routing.
 function App() {
@@ -35,6 +36,9 @@ function App() {
 
         {/* Route for TheProject page */}
         <Route path='/theproject' element={<TheProject />} />
+
+        {/* Route for forgotPassword page */}
+        <Route path='/forgotPassword' element={<ForgotPassword />} />
 
         {/* Route for TheProject page */}
         <Route
