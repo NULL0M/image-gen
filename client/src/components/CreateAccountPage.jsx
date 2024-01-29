@@ -1,83 +1,100 @@
-import toast, { Toaster } from 'react-hot-toast'; //this is for popups after login
-import { useContext } from 'react';
-import { MyContext } from '../contexts/context';
-import { IoMdCloseCircle } from 'react-icons/io';
-import { Link } from 'react-router-dom';
+import toast, { Toaster } from "react-hot-toast"; //this is for popups after login
+import { useContext } from "react";
+import { MyContext } from "../contexts/context";
+import { IoMdCloseCircle } from "react-icons/io";
+import { Link } from "react-router-dom";
 
-import './CreateAccountPage.scss';
+import "./CreateAccountPage.scss";
 
 export default function CreateAccountPage() {
   const { user, closeModal } = useContext(MyContext);
 
-  const register = (e) => {
+  const register = async (e) => {
     e.preventDefault();
     const user = {
       username: e.target.username.value,
       email: e.target.email.value,
       password: e.target.password.value,
     };
-
-    fetch('http://localhost:8080/api/users/register', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(user),
-    });
+    try {
+      const response = await fetch(
+        "http://localhost:8090/api/v1/user/register",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(user),
+        }
+      );
+      if (response.ok) {
+        // Registration successful, display success alert
+        alert("Account created successfully! You can now log in.");
+        closeModal(); // Close the modal or redirect the user as needed
+      } else {
+        // Registration failed, display error alert
+        const errorData = await response.json();
+        alert(`Registration failed: ${errorData.message}`);
+      }
+    } catch (error) {
+      // Handle network errors or other issues
+      console.error("Error during registration:", error);
+      alert("Error during registration. Please try again.");
+    }
   };
   return (
-    <div className='createaccountpage'>
-      <IoMdCloseCircle className='close-button' onClick={closeModal} />
-      <Link className='createaccountpage-child' to='/' />
-      <div className='hello-there-parent'>
-        <h2 className='hello-there'>Hello there!</h2>
-        <p className='welcome-to-imageaigenerator'>{`Welcome to ImageAIGenerator, please enter your email & password to create an account`}</p>
-        <Toaster position='top-center' />
+    <div className="createaccountpage">
+      <IoMdCloseCircle className="close-button" onClick={closeModal} />
+      <Link className="createaccountpage-child" to="/" />
+      <div className="hello-there-parent">
+        <h2 className="hello-there">Hello there!</h2>
+        <p className="welcome-to-imageaigenerator">{`Welcome to ImageAIGenerator, please enter your email & password to create an account`}</p>
+        <Toaster position="top-center" />
       </div>
-      <form className='user-name-parent' action='' onSubmit={register}>
-        <label className='user-name'>User Name</label>
-        <span className='user-name-wrapper'>
+      <form className="user-name-parent" action="" onSubmit={register}>
+        <label className="user-name">User Name</label>
+        <span className="user-name-wrapper">
           <input
-            className='user-name1'
-            type='text'
-            id='username'
-            name='username'
-            placeholder='User Name'
+            className="user-name1"
+            type="text"
+            id="username"
+            name="username"
+            placeholder="User Name"
           />
         </span>
-        <label className='user-name'>Email</label>
-        <span className='user-name-wrapper'>
+        <label className="user-name">Email</label>
+        <span className="user-name-wrapper">
           <input
-            className='user-name1'
-            type='email'
-            id='email'
-            name='email'
-            placeholder='Email'
+            className="user-name1"
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email"
           />
         </span>
-        <label className='user-name'>Password</label>
-        <span className='user-name-wrapper'>
+        <label className="user-name">Password</label>
+        <span className="user-name-wrapper">
           <input
-            className='user-name1'
-            type='password'
-            id='password'
-            name='password'
-            placeholder='Password'
+            className="user-name1"
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Password"
           />
         </span>
 
-        <div className='agreementcontainer'>
-          <div className='rectangle-parent'>
-            <input className='frame-child' required={true} type='checkbox' />
-            <p className='i-agree-to-container'>
+        <div className="agreementcontainer">
+          <div className="rectangle-parent">
+            <input className="frame-child" required={true} type="checkbox" />
+            <p className="i-agree-to-container">
               <span>{`I agree to ImageAIGenerator `}</span>
-              <Link to='/termsandprivacypolicy' target='_blank'>
-                <span className='terms-and-privacy'>
+              <Link to="/termsandprivacypolicy" target="_blank">
+                <span className="terms-and-privacy">
                   Terms and Privacy Policy
                 </span>
               </Link>
             </p>
           </div>
-          <button className='registerButton'>
-            <div className='loregisterButtonSubmit'>Create account</div>
+          <button className="registerButton">
+            <div className="loregisterButtonSubmit">Create account</div>
           </button>
         </div>
       </form>
