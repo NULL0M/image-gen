@@ -26,20 +26,23 @@
   .userdata {
     display: flex;
     position: relative;
-    min-height: 19.438rem;
+    min-height: 30rem;
     overflow: hidden;
     flex-shrink: 0;
     align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
     .user-name-parent {
       display: flex;
       justify-content: flex-start;
       margin: 0;
-      flex-shrink: 0;
+      flex-shrink: 1;
       flex-direction: column;
       align-items: flex-start;
       gap: var(--gap-3xs);
       .user-name {
         position: relative;
+        font-size: var(--font-size-5xl);
       }
       .user-name-wrapper {
         display: flex;
@@ -49,11 +52,12 @@
         overflow: hidden;
         flex-direction: row;
         padding: var(--padding-8xs);
+        margin-bottom: 2rem;
         .user-name1 {
           border: 0;
           outline: 0;
           font-family: $font-family_2;
-          font-size: var(--font-size-xs);
+          font-size: var(--font-size-xl);
           background-color: $background-color_2;
           position: relative;
           color: $color_4;
