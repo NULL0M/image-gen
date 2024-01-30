@@ -34,30 +34,36 @@ function Header() {
         <div className='navegationbar-wrapper'>
           <nav className='navegationbar'>
             <div className='menulinks'>
-              <Link className='genarate' to='/'>
+              <Link className='generate' to='/'>
                 Home
-              </Link>
-              <Link className='genarate' to='/userpage'>
-                User Page
               </Link>
               {user ? (
                 <>
-                  <Link className='genarate' to='/theproject'>
+                  <Link
+                    className='generate'
+                    to='/createpost'
+                    onClick={openLoginModal}>
+                    Generate
+                  </Link>
+                  <Link className='generate' to='/theproject'>
                     The Project
                   </Link>
-                  <Link className='genarate' onClick={handleLogout}>
+                  <Link className='generate' to='/userpage'>
+                    User Page
+                  </Link>
+                  <Link className='generate' onClick={handleLogout}>
                     Log Out
                   </Link>
                 </>
               ) : (
                 <>
                   <Link
-                    className='genarate'
+                    className='generate'
                     to='/createpost'
                     onClick={openLoginModal}>
                     Generate
                   </Link>
-                  <Link className='genarate' onClick={openLoginModal}>
+                  <Link className='generate' onClick={openLoginModal}>
                     Log In
                   </Link>
                 </>

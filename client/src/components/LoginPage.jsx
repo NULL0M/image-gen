@@ -1,13 +1,15 @@
 // client/src/components/LoginPage.jsx
-import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom'; // Remova o import do useHistory
 import { MyContext } from '../contexts/context';
 import { IoMdCloseCircle } from 'react-icons/io';
 import './LoginPage.scss';
 
 export default function LoginPage({ openRegisterModal }) {
+  // Adicione redirectUser como prop
   const { setUser, closeModal } = useContext(MyContext);
-  const [resetPasswordEmail, setResetPasswordEmail] = useState('');
+
+  const redirectUser = useNavigate();
 
   const loginUser = async (e) => {
     e.preventDefault();
@@ -18,28 +20,40 @@ export default function LoginPage({ openRegisterModal }) {
     };
     console.log('Login Info', loginInfo);
 
-    try {
-      const response = await fetch('http://localhost:8090/api/v1/user/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(loginInfo),
-      });
+    // try {
+    const response = await fetch('http://localhost:8090/api/v1/user/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(loginInfo),
+    });
 
-      if (response.ok) {
-        alert('Login successful!');
-        closeModal();
-      } else {
-        alert('Login failed. Please check your credentials and try again.');
-      }
-    } catch (error) {
-      console.error('Error during login:', error);
-      alert('Error during login. Please try again.');
+    const results = await response.json();
+
+    console.log(results);
+
+    if (results) {
+      // const results = await response.json(); // Convert the response to JSON
+      setUser(results.user);
+
+      console.log(results.user); // Define the user with the received data
+
+      // Redirect to home page after successful login using redirectUser function
+      redirectUser('/');
+      closeModal(); // Close the modal
+    } else {
+      alert('Login failed. Please check your credentials and try again.');
     }
+    // }
+    // catch (error) {
+    //   console.error('Error during login:', error);
+    //   alert('Error during login. Please try again.');
+    // }
   };
+
   const handleForgotPassword = () => {
-    closeModal(); // Fechar o modal quando o link for clicado
+    closeModal(); // Close the modal when the link is clicked loginPage
   };
 
   return (

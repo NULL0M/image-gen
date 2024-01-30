@@ -36,10 +36,28 @@ router.post('/login', async (req, res) => {
       .json({ message: 'Username or password is incorrect' });
   }
   const token = jwt.sign({ id: user._id }, 'secret');
-  res.json({ token, userID: user._id });
+  res.json({ token, userID: user._id, user: user });
+});
+
+// New route to get user information
+router.get('/users/:username', async (req, res) => {
+  const { username } = req.params;
+
+  try {
+    const user = await UserModel.findOne({ username });
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+    res.json(user);
+  } catch (error) {
+    console.error('Error fetching user:', error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
 });
 
 export { router as usersRouter };
+
+// Middleware for token verification
 export const verifyToken = (req, res, next) => {
   const authHeader = req.headers.authorization;
   if (authHeader) {
