@@ -1,3 +1,5 @@
+// client/src/components/CreateAccountPage.jsx
+
 import toast, { Toaster } from 'react-hot-toast'; //this is for popups after login
 import { useContext } from 'react';
 import { MyContext } from '../contexts/context';
@@ -9,19 +11,36 @@ import './CreateAccountPage.scss';
 export default function CreateAccountPage() {
   const { user, closeModal } = useContext(MyContext);
 
-  const register = (e) => {
+  const register = async (e) => {
     e.preventDefault();
     const user = {
       username: e.target.username.value,
       email: e.target.email.value,
       password: e.target.password.value,
     };
-
-    fetch('http://localhost:8080/api/users/register', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(user),
-    });
+    try {
+      const response = await fetch(
+        'http://localhost:8090/api/v1/user/register',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(user),
+        }
+      );
+      if (response.ok) {
+        // Registration successful, display success alert
+        alert('Account created successfully! You can now log in.');
+        closeModal(); // Close the modal or redirect the user as needed
+      } else {
+        // Registration failed, display error alert
+        const errorData = await response.json();
+        alert(`Registration failed: ${errorData.message}`);
+      }
+    } catch (error) {
+      // Handle network errors or other issues
+      console.error('Error during registration:', error);
+      alert('Error during registration. Please try again.');
+    }
   };
   return (
     <div className='createaccountpage'>

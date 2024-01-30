@@ -1,4 +1,4 @@
-//image-gen/client/src/pages/TheProject.scss
+//client/src/pages/UserPage.jsx
 import { useContext } from 'react';
 import { MyContext } from '../contexts/context';
 import Header from '../components/Header';
@@ -10,7 +10,8 @@ import './UserPage.scss';
 
 // Functional component definition for the UserPage.
 const UserPage = () => {
-  const { selectedComponent, setSelectedComponent } = useContext(MyContext);
+  const { user, selectedComponent, setSelectedComponent } =
+    useContext(MyContext);
 
   const renderSelectedComponent = () => {
     switch (selectedComponent) {
@@ -22,6 +23,8 @@ const UserPage = () => {
         return null;
     }
   };
+
+  console.log(user);
   return (
     <div className='userpage'>
       <main className='main'>
