@@ -1,4 +1,4 @@
-//image-gen/client/src/contexts/container.jsx
+//image-gen/client/src/contexts/globalContext.jsx
 import { useContext, useState } from 'react';
 import { MyContext } from './context';
 
@@ -7,7 +7,6 @@ export default function Container({ children }) {
   const [showLogin, setShowLogin] = useState(false);
   const [selectedComponent, setSelectedComponent] = useState('userphotos');
 
-  // Exemplo: Estado do usuário e função de setar usuário
   const [user, setUser] = useState(null);
 
   const closeModal = () => {
@@ -16,8 +15,6 @@ export default function Container({ children }) {
   };
 
   const handleLogout = () => {
-    // Adicione lógica aqui para efetuar logout
-    // Exemplo: redefinir o estado do usuário para nulo
     setUser(null);
     closeModal();
   };
@@ -30,8 +27,8 @@ export default function Container({ children }) {
     closeModal,
     selectedComponent,
     setSelectedComponent,
-    // Adicionando o estado do usuário e função de logout ao contexto
     user,
+    setUser,
     handleLogout,
   };
 
