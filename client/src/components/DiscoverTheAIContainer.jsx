@@ -30,6 +30,23 @@ const DiscoverTheAIContainer = () => {
 
   const handleSearchChange = (e) => {
     setSearchText(e.target.value);
+    if (e.target.value === '') {
+      setSearchedResults(null);
+    } else {
+      console.log('Search text:', e.target.value);
+      console.log('All posts:', allPosts);
+  
+      const results = allPosts?.filter((post) => {
+        const lowercasedTitle = post.prompt?.toLowerCase();
+        const lowercasedSearchText = e.target.value.toLowerCase();
+      
+        // Check if lowercasedTitle is defined before using includes
+        return lowercasedTitle !== undefined && lowercasedTitle.includes(lowercasedSearchText);
+      });
+      
+      console.log('Search results:', results);
+      setSearchedResults(results);
+    }
   };
 
   const fetchPosts = async () => {
@@ -91,8 +108,8 @@ const DiscoverTheAIContainer = () => {
             )}
             <div className='grid-container'>
               <RenderCards
-                data={allPosts?.slice(gridIndex * 21, (gridIndex + 1) * 21)}
-                title={`No Posts Yet in Grid ${gridIndex + 1}`}
+                data={searchText ? searchedResults : allPosts}
+                title={searchText ? 'No matching posts' : `No Posts Yet in Grid ${gridIndex + 1}`}
               />
             </div>
           </React.Fragment>
