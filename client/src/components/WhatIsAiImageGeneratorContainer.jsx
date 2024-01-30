@@ -39,7 +39,7 @@ export const WhatIsAiImageGeneratorContainer = () => {
               settings
             </p>
           </div>
-          <div className='number2-1-parent'>
+          <div className='number1-1-parent'>
             <img className='number2-1-icon' alt='' src={number2} />
             <p className='think-of-a'>
               Then enter your prompt and generate your image. Choose the best
@@ -47,7 +47,7 @@ export const WhatIsAiImageGeneratorContainer = () => {
               unique touch with elements like text or drawings.
             </p>
           </div>
-          <div className='number3-1-parent'>
+          <div className='number1-1-parent'>
             <img className='number3-1-icon' alt='' src={number3} />
             <p className='think-of-a'>
               With the right prompts, you can create amazing AI Images, and have
