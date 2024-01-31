@@ -37,7 +37,7 @@ export default function ForgotPassword({ openRegisterModal }) {
             <p>Enter your email address below to reset your password.</p>
           </div>
           <form>
-            <div class='user-box'>
+            <div className='user-box'>
               <input
                 type='email'
                 id='resetPasswordEmail'
@@ -57,7 +57,7 @@ export default function ForgotPassword({ openRegisterModal }) {
           </form>
           <p>
             Don't have an account?{' '}
-            <a href='' class='a2' onClick={openRegisterModal}>
+            <a href='' className='a2' onClick={openRegisterModal}>
               Sign up!
             </a>
           </p>

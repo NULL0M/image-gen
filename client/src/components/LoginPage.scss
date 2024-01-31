@@ -115,6 +115,9 @@
         background-color: $background-color_2;
         color: $color_4;
       }
+      .toggle-password {
+        color: $color_5;
+      }
     }
 
     .log-in-wrapper {
@@ -141,6 +144,15 @@
         font-family: $font-family_2;
         color: $color_2;
       }
+    }
+  }
+  .forgot-password-link {
+    text-decoration: none;
+    text-align: center;
+    &:hover,
+    &:active,
+    &:visited {
+      color: $color_1;
     }
   }
   .dont-have-an-account-yet-parent {

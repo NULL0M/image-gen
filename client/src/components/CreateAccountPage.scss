@@ -12,7 +12,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   border-radius: var(--br-xl);
   background: linear-gradient(
     180deg,
@@ -86,7 +86,6 @@
     align-items: flex-start;
     gap: var(--gap-3xs);
     .user-name {
-      cursor: pointer;
       align-self: stretch;
       position: relative;
     }
@@ -103,14 +102,21 @@
         border: 0;
         outline: 0;
         font-family: $font-family_2;
-        font-size: var(--font-size-xs);
         background-color: $background-color_2;
         position: relative;
         color: $color_4;
         text-align: left;
         display: inline-block;
-        width: 303px;
+        width: 18.935rem;
         flex-shrink: 0;
+        &:valid,
+        &:focus {
+          font-size: var(--font-size-xl);
+          color: $color_1;
+        }
+      }
+      .toggle-password {
+        color: $color_5;
       }
     }
   }
@@ -138,13 +144,14 @@
         position: relative;
         border: 1px solid var(--color-lime);
         box-sizing: border-box;
-        width: 10px;
-        height: 10px;
+        width: 20px;
+        height: 20px;
       }
       .i-agree-to-container {
+        position: relative;
         margin: 0;
         flex: 1;
-        position: relative;
+        font-size: var(--font-size-base);
         .terms-and-privacy {
           background: linear-gradient(
             90.36deg,

@@ -39,10 +39,7 @@ function Header() {
               </Link>
               {user ? (
                 <>
-                  <Link
-                    className='generate'
-                    to='/createpost'
-                    onClick={openLoginModal}>
+                  <Link className='generate' to='/createpost'>
                     Generate
                   </Link>
                   <Link className='generate' to='/theproject'>
@@ -57,12 +54,6 @@ function Header() {
                 </>
               ) : (
                 <>
-                  <Link
-                    className='generate'
-                    to='/createpost'
-                    onClick={openLoginModal}>
-                    Generate
-                  </Link>
                   <Link className='generate' onClick={openLoginModal}>
                     Log In
                   </Link>

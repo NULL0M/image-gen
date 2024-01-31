@@ -1,17 +1,18 @@
-// client/src/components/UserDetails.jsx
-
-import React, { useState, useContext } from 'react';
-import './UserDetails.scss';
+import { useState, useContext } from 'react';
 import { MyContext } from '../contexts/context';
+import './UserDetails.scss';
 
 const UserDetails = () => {
-  const { user, setUser } = useContext(MyContext);
+  const { user } = useContext(MyContext);
 
-  const [userData, setUserData] = useState({
-    username: user.username,
-    email: user.email,
-    password: user.password,
-  });
+  // Verifica se user está null antes de tentar acessar suas propriedades
+  const initialUserData = {
+    username: user?.username || '',
+    email: user?.email || '',
+    password: user?.password || '',
+  };
+
+  const [userData, setUserData] = useState(initialUserData);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -54,7 +55,6 @@ const UserDetails = () => {
                 name='username'
                 value={userData.username}
                 onChange={handleChange}
-                // placeholder='User Name'
               />
             </span>
             <label className='user-name'>Email</label>
@@ -66,19 +66,18 @@ const UserDetails = () => {
                 name='email'
                 value={userData.email}
                 onChange={handleChange}
-                // placeholder='Email'
               />
             </span>
             <label className='user-name'>Password</label>
             <span className='user-name-wrapper'>
               <input
                 className='user-name1'
+                value={userData.password}
+                onChange={handleChange}
                 type='password'
                 id='password'
                 name='password'
-                value={userData.password}
-                onChange={handleChange}
-                // placeholder='Password'
+                placeholder='Password'
               />
             </span>
           </div>

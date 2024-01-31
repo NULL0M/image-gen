@@ -100,3 +100,5 @@ npm run client
 ```
 
 ### Screenshots
+
+![Screenshots](https://github.com/NULL0M/image-gen/blob/636990df5b7e0895168db1aa2a6690376795350a/client/src/assets/ImageAIGeneratorHomePage.png)

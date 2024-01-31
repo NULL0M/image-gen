@@ -1,12 +1,12 @@
 //image-gen/client/src/contexts/globalContext.jsx
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import { MyContext } from './context';
 
 export default function Container({ children }) {
   const [showRegister, setShowRegister] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
   const [selectedComponent, setSelectedComponent] = useState('userphotos');
-
+  const [showPassword, setShowPassword] = useState(false);
   const [user, setUser] = useState(null);
 
   const closeModal = () => {
@@ -19,9 +19,15 @@ export default function Container({ children }) {
     closeModal();
   };
 
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
   const contextValues = {
     showRegister,
     showLogin,
+    showPassword,
+    setShowPassword,
     setShowRegister,
     setShowLogin,
     closeModal,
@@ -30,6 +36,7 @@ export default function Container({ children }) {
     user,
     setUser,
     handleLogout,
+    togglePasswordVisibility,
   };
 
   return (
