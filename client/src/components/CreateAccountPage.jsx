@@ -1,15 +1,17 @@
 // client/src/components/CreateAccountPage.jsx
 
-import toast, { Toaster } from 'react-hot-toast'; //this is for popups after login
+import { Toaster } from 'react-hot-toast'; //this is for popups after login
+import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { MyContext } from '../contexts/context';
 import { IoMdCloseCircle } from 'react-icons/io';
-import { Link } from 'react-router-dom';
+import { TbEye, TbEyeClosed } from 'react-icons/tb';
 
 import './CreateAccountPage.scss';
 
 export default function CreateAccountPage() {
-  const { user, closeModal } = useContext(MyContext);
+  const { user, closeModal, togglePasswordVisibility, showPassword } =
+    useContext(MyContext);
 
   const register = async (e) => {
     e.preventDefault();
@@ -76,11 +78,23 @@ export default function CreateAccountPage() {
         <span className='user-name-wrapper'>
           <input
             className='user-name1'
-            type='password'
+            type={showPassword ? 'text' : 'password'}
             id='password'
             name='password'
             placeholder='Password'
           />
+          {/*Icon to toggle between showing and hiding password */}
+          {showPassword ? (
+            <TbEye
+              className='toggle-password'
+              onClick={togglePasswordVisibility}
+            />
+          ) : (
+            <TbEyeClosed
+              className='toggle-password'
+              onClick={togglePasswordVisibility}
+            />
+          )}
         </span>
 
         <div className='agreementcontainer'>
