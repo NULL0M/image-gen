@@ -1,3 +1,5 @@
+// client/src/components/TextToImageGenerator.scss
+
 @import '../styles/media-queries';
 @import '../styles/variables';
 @import '../styles/images';
@@ -10,6 +12,7 @@
   background: linear-gradient(180deg, #000, #14181b);
   align-items: flex-start;
   padding: 0 var(--padding-61xl);
+
   .generatorcontainer {
     align-self: stretch;
     display: flex;
@@ -20,12 +23,12 @@
     gap: var(--gap-17xl);
     text-align: center;
     font-size: var(--font-size-xl);
-    color: $color_1;
-    font-family: $font-family_2;
-    .teste {
+    color: var(--color_1);
+    font-family: var(--font-family_2);
+
+    .generator-Container {
       display: flex;
       flex-direction: column;
-
       align-items: center;
       padding: var(--padding-43xl) var(--padding-80xl);
       gap: var(--gap-17xl);
@@ -36,7 +39,8 @@
         position: relative;
         font-size: 4rem;
         font-weight: 400;
-        font-family: $font-family_1;
+        font-family: var(--font-family_1);
+
         .generator {
           background: linear-gradient(
             90.36deg,
@@ -47,12 +51,14 @@
           -webkit-text-fill-color: transparent;
         }
       }
+
       .easily-turn-your {
         margin: 0;
         align-self: stretch;
         position: relative;
         font-size: var(--font-size-xl);
       }
+
       .note-we-are {
         margin: 0;
         align-self: stretch;
@@ -66,6 +72,7 @@
       flex-direction: column;
       margin-top: 4rem;
       max-width: 80rem;
+
       .form-generator {
         margin: 0;
         align-self: stretch;
@@ -85,44 +92,44 @@
           color: #4b5563;
           font-size: 0.875rem;
           border-radius: 0.375rem;
-          // padding: 0.75rem;
           width: 25rem;
           height: 25rem;
           display: flex;
           justify-content: center;
           align-items: center;
 
-          .my-generated-image {
-            width: 100%; // Equivalente a w-full
-            height: 100%; // Equivalente a h-full
-            object-fit: contain; // Equivalente a object-contain
-          }
+          .my-generated-image,
           .my-image {
-            width: 100%; // Equivalente a w-full
-            height: 100%; // Equivalente a h-full
-            object-fit: contain; // Equivalente a object-contain
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
           }
+
           .my-overlay {
             position: absolute;
-            top: 40%;
-            left: 40%;
+            top: 50%;
+            left: 50%;
             transform: translate(-50%, -50%);
+            // transform: scale(0.5, 0.5);
             z-index: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             background-color: rgba(0, 0, 0, 0.5);
-            border-radius: 0.375rem; /* ou outro valor conforme necessário */
+            border-radius: 0.375rem;
           }
         }
       }
+
       .my-flex-container {
-        margin-top: 1.25rem; // ou outro valor conforme necessário
+        margin-top: 1.25rem;
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 1.25rem; // ou outro valor conforme necessário
-        .generateImage {
+        gap: 1.25rem;
+
+        .generateImage,
+        .SharingButton {
           cursor: pointer;
           border-radius: var(--br-3xs);
           background: linear-gradient(
@@ -142,17 +149,20 @@
           gap: var(--gap-3xs);
         }
       }
+
       .my-div {
-        margin-top: 2.5rem; // ou outro valor desejado, correspondente a mt-10
+        margin-top: 2.5rem;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+
         .my-paragraph {
-          margin-top: 0.5rem; // ou outro valor desejado, correspondente a mt-2
-          color: #666e75; // ou outra cor desejada, correspondente a text-[#666e75]
-          font-size: 14px; // ou outro valor desejado, correspondente a text-[14px]
+          margin-top: 0.5rem;
+          color: #666e75;
+          font-size: 14px;
         }
+
         .SharingButton {
           cursor: pointer;
           border-radius: var(--br-3xs);
@@ -176,7 +186,7 @@
     }
 
     .ai-png-isolated-hd-1-wrapper {
-      background-color: $background-color_3;
+      background-color: var(--background-color_3);
       box-shadow: 0 0 25px 2px #1e1e1e;
       border: 1px solid var(--color-gray-100);
       box-sizing: border-box;
@@ -189,6 +199,7 @@
       align-items: center;
       justify-content: center;
       padding: var(--padding-3xs);
+
       .ai-png-isolated-hd-1-icon {
         position: relative;
         width: 18.75rem;

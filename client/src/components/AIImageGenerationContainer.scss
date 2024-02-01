@@ -1,5 +1,6 @@
-@import '../styles/media-queries';
-@import '../styles/variables';
+//client/src/components/AIImageGenerationContainer.scss
+@import '../styles/media-queries'; /* Import media queries */
+@import '../styles/variables'; /* Import variables */
 
 .thefutureisai {
   align-self: stretch;
@@ -13,17 +14,19 @@
   gap: var(--gap-68xl);
   text-align: center;
   font-size: var(--font-size-45xl);
-  color: $color_1;
-  font-family: $font-family_2;
+  color: var(--color-white);
+  font-family: var(--font-family-2);
+
   .a-fully-integrated {
     align-self: stretch;
     position: relative;
     margin: 0;
     font-size: inherit;
     font-weight: 400;
-    font-family: $font-family_1;
+    font-family: var(--font-family-1);
     white-space: pre-wrap;
   }
+
   .thefutureisai1 {
     align-self: stretch;
     overflow: hidden;
@@ -33,6 +36,7 @@
     align-items: center;
     justify-content: space-between;
     font-size: var(--font-size-45xl);
+
     .thefutureisaiimage {
       flex: 1;
       overflow: hidden;
@@ -40,6 +44,7 @@
       flex-direction: column;
       align-items: flex-start;
       justify-content: flex-start;
+
       .image-10-icon {
         // align-self: stretch;
         // position: relative;
@@ -50,6 +55,7 @@
         object-fit: cover;
       }
     }
+
     .thefutureisaidescriptioncontai {
       display: flex;
       flex-direction: column;
@@ -57,14 +63,16 @@
       justify-content: flex-start;
       flex: 1;
       gap: var(--gap-3xl);
+
       .the-future-is {
         align-self: stretch;
         margin: 0;
         position: relative;
         font-size: inherit;
         font-weight: 400;
-        font-family: $font-family_1;
+        font-family: var(--font-family-1);
       }
+
       .thefutureisaidescription {
         display: flex;
         flex-direction: column;
@@ -74,6 +82,7 @@
         padding: 0 var(--padding-111xl);
         gap: var(--gap-11xl);
         font-size: var(--font-size-5xl);
+
         .aidescriptioncontainer {
           align-self: stretch;
           overflow: hidden;
@@ -83,13 +92,15 @@
           flex-direction: column;
           align-items: center;
           justify-content: flex-start;
+
           .infinite-horizons {
             margin: 0;
             position: relative;
             font-size: inherit;
             font-weight: 400;
-            font-family: $font-family_1;
+            font-family: var(--font-family-1);
           }
+
           .ai-powered-image-generation-container {
             margin: 0;
             position: relative;
@@ -97,10 +108,11 @@
             text-align: left;
             display: inline-block;
             width: 23.19rem;
+
             .artificial-intelligence {
               background: linear-gradient(
                 90.36deg,
-                #00ff10,
+                var(--color-lime),
                 rgba(204, 255, 0, 0.8)
               );
               -webkit-background-clip: text;

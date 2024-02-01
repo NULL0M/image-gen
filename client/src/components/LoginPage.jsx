@@ -1,14 +1,14 @@
 // client/src/components/LoginPage.jsx
 import React, { useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // Remova o import do useHistory
+import { Link, useNavigate } from 'react-router-dom';
 import { MyContext } from '../contexts/context';
 import { IoMdCloseCircle } from 'react-icons/io';
+import { TbEye, TbEyeClosed } from 'react-icons/tb';
 import './LoginPage.scss';
 
 export default function LoginPage({ openRegisterModal }) {
-  // Adicione redirectUser como prop
-  const { setUser, closeModal } = useContext(MyContext);
-
+  const { setUser, closeModal, togglePasswordVisibility, showPassword } =
+    useContext(MyContext);
   const redirectUser = useNavigate();
 
   const loginUser = async (e) => {
@@ -18,9 +18,7 @@ export default function LoginPage({ openRegisterModal }) {
       username: e.target.username.value,
       password: e.target.password.value,
     };
-    console.log('Login Info', loginInfo);
 
-    // try {
     const response = await fetch('http://localhost:8090/api/v1/user/login', {
       method: 'POST',
       headers: {
@@ -31,34 +29,23 @@ export default function LoginPage({ openRegisterModal }) {
 
     const results = await response.json();
 
-    console.log(results);
-
     if (results) {
-      // const results = await response.json(); // Convert the response to JSON
       setUser(results.user);
-
-      console.log(results.user); // Define the user with the received data
-
-      // Redirect to home page after successful login using redirectUser function
       redirectUser('/');
-      closeModal(); // Close the modal
+      closeModal();
     } else {
       alert('Login failed. Please check your credentials and try again.');
     }
-    // }
-    // catch (error) {
-    //   console.error('Error during login:', error);
-    //   alert('Error during login. Please try again.');
-    // }
   };
 
   const handleForgotPassword = () => {
-    closeModal(); // Close the modal when the link is clicked loginPage
+    closeModal();
   };
 
   return (
     <div className='loginpage'>
       <IoMdCloseCircle className='close-button' onClick={closeModal} />
+      <Link className='loginpage-child ' to='/' />
       <div className='welcome-back-parent'>
         <h2 className='welcome-back'>Welcome back</h2>
         <p className='please-enter-your-email'>
@@ -80,22 +67,34 @@ export default function LoginPage({ openRegisterModal }) {
         <span className='email-container'>
           <input
             className='email3'
-            type='password'
+            type={showPassword ? 'text' : 'password'}
             id='password'
             name='password'
             placeholder='Password'
           />
+          {/*Icon to toggle between showing and hiding password */}
+          {showPassword ? (
+            <TbEye
+              className='toggle-password'
+              onClick={togglePasswordVisibility}
+            />
+          ) : (
+            <TbEyeClosed
+              className='toggle-password'
+              onClick={togglePasswordVisibility}
+            />
+          )}
         </span>
         <button type='submit' className='log-in-wrapper'>
           <div className='log-in'>Log In</div>
         </button>
-        <Link
-          to='/forgotPassword'
-          className='forgot-password-link'
-          onClick={handleForgotPassword}>
-          Forgot password?
-        </Link>
       </form>
+      <Link
+        to='/forgotPassword'
+        className='forgot-password-link'
+        onClick={handleForgotPassword}>
+        Forgot password?
+      </Link>
 
       <div className='dont-have-an-account-yet-parent'>
         <h3 className='dont-have-an'>Don't have an account yet?</h3>

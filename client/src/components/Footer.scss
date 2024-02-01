@@ -1,18 +1,22 @@
-@import "../styles/media-queries";
-@import "../styles/variables";
-@import "../styles/images";
+// client/src/components/Footer.scss
+
+@import '../styles/media-queries';
+@import '../styles/variables';
+@import '../styles/images';
 
 footer {
   width: 100%;
   position: absolute;
   bottom: 0;
   background: linear-gradient(180deg, #000, #14181b);
-  color: $color_1; // Assuming $color_1 is defined in your variables
+  color: var(--color_1); // Assuming $color_1 is defined in your variables
   padding: 100px 0 30px;
   border-top-left-radius: 75px;
   font-size: 13px;
   line-height: 20px;
-  font-family: $font-family_2; // Assuming $font-family_2 is defined in your variables
+  font-family: var(
+    --font-family_2
+  ); // Assuming $font-family_2 is defined in your variables
 }
 
 .row {
@@ -29,8 +33,9 @@ footer {
   padding: 10px;
 }
 
-.col:nth-child(2), .col:nth-child(3) {
- flex-basis: 15%;
+.col:nth-child(2),
+.col:nth-child(3) {
+  flex-basis: 15%;
 }
 
 .logo {
@@ -70,16 +75,14 @@ form {
   justify-content: space-between;
   border-bottom: 1px solid #ccc;
   margin-bottom: 50px;
-
 }
 
-form .far{
+form .far {
   font-size: 18px;
   margin-right: 10px;
-  
 }
 
-form input{
+form input {
   width: 100%;
   background: transparent;
   color: #ccc;
@@ -87,14 +90,14 @@ form input{
   outline: none;
 }
 
-form button{
+form button {
   background: transparent;
   border: 0;
   outline: none;
   cursor: pointer;
 }
 
-form button .fas{
+form button .fas {
   font-size: 16px;
   color: #ccc;
 }
@@ -128,8 +131,6 @@ hr {
   border: 0;
   border-bottom: 1px solid #ccc;
   margin: 20px auto;
-
-
 }
 
 .copyright {

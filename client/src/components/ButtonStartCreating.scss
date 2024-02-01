@@ -1,5 +1,7 @@
-@import "../styles/media-queries";
-@import "../styles/variables";
+// client/src/components/ButtonStartCreating.scss
+
+@import '../styles/media-queries';
+@import '../styles/variables';
 
 .buttonstartcreating {
   display: flex;
@@ -9,8 +11,9 @@
   gap: var(--gap-17xl);
   text-align: left;
   font-size: var(--font-size-base);
-  color: $color_2;
-  font-family: $font-family_2;
+  color: var(--color-black); /* Use variable */
+  font-family: var(--font-family-2); /* Use variable */
+
   .ellipse-group {
     cursor: pointer;
     text-decoration: none;
@@ -27,14 +30,16 @@
     padding: var(--padding-3xs);
     box-sizing: border-box;
     gap: var(--gap-3xs);
-    color: $color_3;
+    color: var(--color-inherit); /* Use variable */
+
     .frame-inner {
       position: relative;
       border-radius: 50%;
-      background-color: $background-color_1;
+      background-color: var(--background-color-1); /* Use variable */
       width: 0.06rem;
       height: 0.06rem;
     }
+
     .start-creating-for {
       position: relative;
       white-space: pre-wrap;
@@ -46,7 +51,7 @@
     position: relative;
     font-size: var(--font-size-xs);
     font-weight: 400;
-    font-family: $font-family_1;
-    color: $color_1;
+    font-family: var(--font-family-1); /* Use variable */
+    color: var(--color-white); /* Use variable */
   }
 }
