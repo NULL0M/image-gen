@@ -1,4 +1,4 @@
-// image-gen/client/src/components/TextToImageGenerator.jsx
+// client/src/components/TextToImageGenerator.jsx
 
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -11,8 +11,6 @@ import Loader from './Loader';
 import './TextToImageGenerator.scss';
 
 export const TextToImageGenerator = () => {
-  //generating and submitting images using the DALL-E model (a neural network for generating images from textual descriptions).
-
   const navigate = useNavigate();
 
   const [form, setForm] = useState({
@@ -23,6 +21,8 @@ export const TextToImageGenerator = () => {
 
   const [generatingImg, setGeneratingImg] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [showImage, setShowImage] = useState(false);
+  const [showPreview, setShowPreview] = useState(true);
 
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -36,22 +36,20 @@ export const TextToImageGenerator = () => {
     if (form.prompt) {
       try {
         setGeneratingImg(true);
-        const response = await fetch(
-          // Correct endpoint for image generation
-          'http://localhost:8090/api/v1/dalle',
-          {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              prompt: form.prompt,
-            }),
-          }
-        );
+        setShowImage(false);
+        const response = await fetch('http://localhost:8090/api/v1/dalle', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            prompt: form.prompt,
+          }),
+        });
 
         const data = await response.json();
         setForm({ ...form, photo: `data:image/jpeg;base64,${data.photo}` });
+        setShowImage(true); // Mostra a imagem
       } catch (err) {
         alert(err);
       } finally {
@@ -61,7 +59,6 @@ export const TextToImageGenerator = () => {
       alert('Please provide proper prompt');
     }
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -77,21 +74,16 @@ export const TextToImageGenerator = () => {
           body: JSON.stringify({ ...form }),
         });
 
-        // Handle non-success responses
         if (!response.ok) {
           throw new Error(`Server responded with ${response.status} status`);
         }
 
-        // Only try to parse json if response is ok
         const data = await response.json();
 
         alert('Success');
         navigate('/');
       } catch (err) {
-        // Log useful debug info
         console.log('Error creating post', err);
-
-        // Show generic alert
         alert('Error creating post - please try again');
       } finally {
         setLoading(false);
@@ -100,11 +92,12 @@ export const TextToImageGenerator = () => {
       alert('Please generate an image with proper details');
     }
   };
+
   return (
     <main className='main2'>
       <Header />
       <section className='generatorcontainer'>
-        <section className='teste'>
+        <section className='generator-Container'>
           <h2 className='create-your-text-container'>
             <span>{`Create your text to image with the `}</span>
             <span className='generator'>Generator</span>
@@ -135,7 +128,7 @@ export const TextToImageGenerator = () => {
             />
 
             <div className='photo-container '>
-              {form.photo ? (
+              {showImage && form.photo ? (
                 <img
                   src={form.photo}
                   alt={form.prompt}

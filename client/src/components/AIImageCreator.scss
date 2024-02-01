@@ -1,5 +1,6 @@
-@import "../styles/media-queries";
-@import "../styles/variables";
+// client/src/components/AIImageCreator.scss
+@import '../styles/media-queries';
+@import '../styles/variables';
 
 .main3 {
   align-self: stretch;
@@ -11,8 +12,8 @@
   padding: 0 var(--padding-61xl);
   text-align: left;
   font-size: var(--font-size-45xl);
-  color: $color_1;
-  font-family: $font-family_2;
+  color: var(--color_1); /*revised */
+  font-family: var(--font-family_2); /*revised */
   .maincontainer-parent {
     align-self: stretch;
     display: flex;
@@ -34,7 +35,7 @@
         position: relative;
         font-size: inherit;
         font-weight: 400;
-        font-family: $font-family_1;
+        font-family: var(--font-family_1); /*revised */
         .photos {
           background: linear-gradient(
             90.36deg,

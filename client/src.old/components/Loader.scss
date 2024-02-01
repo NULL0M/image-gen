@@ -1,0 +1,99 @@
+@import '../styles/variables';
+
+.input {
+  width: 50vw;
+  height: 50vh;
+  position: absolute;
+  z-index: 400;
+  opacity: 0;
+  cursor: pointer;
+}
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50vmin;
+  height: 50vmin;
+  position: relative;
+}
+.bg {
+  width: 25vw;
+  height: 50vh;
+  position: absolute;
+  z-index: 80;
+}
+.ring {
+  border: 1.5vmin solid var(--color_10);
+  width: 64%;
+  height: 64%;
+  border-radius: 100%;
+  z-index: 100;
+}
+.dot {
+  width: 50%;
+  position: absolute;
+  height: 7vmin;
+  left: 0;
+  transform-origin: 100% 50%;
+  z-index: 90;
+  animation: over-ring calc(var(--s) * 2) linear 0s infinite,
+    spin calc(var(--s) * 8) linear 0s infinite;
+  &:before {
+    content: '';
+    width: 5.5vmin;
+    height: 5.5vmin;
+    left: 0;
+    box-sizing: border-box;
+    position: absolute;
+    background: var(--color_10);
+    border-radius: 100%;
+    animation: ball var(--s) ease-in-out 0s infinite alternate;
+  }
+  &:nth-child(1) {
+    animation-delay: calc(var(--d) * 0), calc(var(--d) * 0);
+    &:before {
+      animation-delay: calc(var(--d) * 0);
+    }
+  }
+  &:nth-child(2) {
+    animation-delay: calc(var(--d) * -1), calc(var(--d) * -4);
+    &:before {
+      animation-delay: calc(var(--d) * -1);
+    }
+  }
+  &:nth-child(3) {
+    animation-delay: calc(var(--d) * -2), calc(var(--d) * -8);
+    &:before {
+      animation-delay: calc(var(--d) * -2);
+    }
+  }
+  // Resto das regras de animação...
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes ball {
+  100% {
+    left: 12vmin;
+    width: 4vmin;
+    height: 4vmin;
+  }
+}
+@keyframes over-ring {
+  0%,
+  50% {
+    z-index: 90;
+  }
+  51%,
+  100% {
+    z-index: 91;
+  }
+}

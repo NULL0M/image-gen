@@ -1,10 +1,13 @@
-@import "../styles/media-queries";
-@import "../styles/variables";
-@import "../styles/images";
+// client/src/components/FormField.scss
+
+@import '../styles/media-queries';
+@import '../styles/variables';
+@import '../styles/images';
 
 .form {
   width: 100%;
-  .form-tittle {
+
+  .form-title {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -25,13 +28,15 @@
       padding: var(--padding-3xs);
       box-sizing: border-box;
       gap: var(--gap-3xs);
+      border: 1ps solid red;
     }
   }
+
   .form-field {
     margin: 0;
     align-self: stretch;
     border-radius: var(--br-xl);
-    background-color: $background-color_3;
+    background-color: var(--background-color_3);
     overflow: hidden;
     display: flex;
     flex-direction: row;
@@ -41,49 +46,20 @@
     padding: var(--padding-5xs) var(--padding-xl) var(--padding-4xs);
     gap: var(--gap-31xl);
     opacity: 0.8;
+
     .input-field {
       border: 0;
       outline: 0;
-      font-family: $font-family_2;
+      font-family: var(--font-family_2);
       font-size: var(--font-size-sm);
-      background-color: $background-color_2;
+      background-color: var(--background-color_2);
       flex: 1;
       position: relative;
-      color: $color_4;
+      color: var(--color_4);
       text-align: left;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
     }
-  }
-}
-
-.form-field {
-  margin: 0;
-  align-self: stretch;
-  border-radius: var(--br-xl);
-  background-color: $background-color_3;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: flex-start;
-  padding: var(--padding-5xs) var(--padding-xl) var(--padding-4xs);
-  gap: var(--gap-31xl);
-  opacity: 0.8;
-  .input-field {
-    border: 0;
-    outline: 0;
-    font-family: $font-family_2;
-    font-size: var(--font-size-sm);
-    background-color: $background-color_2;
-    flex: 1;
-    position: relative;
-    color: $color_4;
-    text-align: left;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
   }
 }

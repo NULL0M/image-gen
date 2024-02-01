@@ -1,3 +1,5 @@
+// client/src/components/CreateAccountPage.scss
+
 @import '../styles/media-queries';
 @import '../styles/variables';
 @import '../styles/images';
@@ -7,13 +9,12 @@
   display: flex;
   align-items: center;
   box-sizing: border-box;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   justify-content: space-evenly;
-  border-radius: var(--br-xl);
+  border-radius: var(--border-radius-xl);
   background: linear-gradient(
     180deg,
     rgba(0, 0, 0, 0.6),
@@ -24,14 +25,15 @@
   gap: var(--gap-21xl);
   text-align: left;
   font-size: var(--font-size-13xl);
-  color: $color_1;
-  font-family: $font-family_2;
+  color: var(--color_1);
+  font-family: var(--font-family_2);
   position: fixed;
   top: 3rem;
   left: 35%;
   z-index: 1;
   width: 27vw;
   height: 88vh;
+
   .close-button {
     cursor: pointer;
     position: relative;
@@ -51,6 +53,7 @@
     background-repeat: no-repeat;
     background-position: top;
   }
+
   .hello-there-parent {
     align-self: stretch;
     display: flex;
@@ -58,13 +61,15 @@
     align-items: center;
     justify-content: flex-start;
     gap: var(--gap-3xs);
+
     .hello-there {
       margin: 0;
       position: relative;
       font-size: inherit;
       font-weight: 400;
-      font-family: $font-family_1;
+      font-family: var(--font-family_1);
     }
+
     .welcome-to-imageaigenerator {
       margin: 0;
       position: relative;
@@ -74,9 +79,11 @@
       width: 300px;
     }
   }
+
   form {
     border: 0;
   }
+
   .user-name-parent {
     display: flex;
     justify-content: flex-start;
@@ -85,10 +92,12 @@
     flex-direction: column;
     align-items: flex-start;
     gap: var(--gap-3xs);
+
     .user-name {
       align-self: stretch;
       position: relative;
     }
+
     .user-name-wrapper {
       align-self: stretch;
       display: flex;
@@ -98,28 +107,32 @@
       overflow: hidden;
       flex-direction: row;
       padding: var(--padding-8xs);
+
       .user-name1 {
         border: 0;
         outline: 0;
-        font-family: $font-family_2;
-        background-color: $background-color_2;
+        font-family: var(--font-family_2);
+        background-color: var(--background-color_2);
         position: relative;
-        color: $color_4;
+        color: var(--color_4);
         text-align: left;
         display: inline-block;
         width: 18.935rem;
         flex-shrink: 0;
+
         &:valid,
         &:focus {
           font-size: var(--font-size-xl);
-          color: $color_1;
+          color: var(--color_1);
         }
       }
+
       .toggle-password {
-        color: $color_5;
+        color: var(--color_5);
       }
     }
   }
+
   .agreementcontainer {
     overflow: hidden;
     display: flex;
@@ -130,6 +143,7 @@
     padding: var(--padding-3xs) 0;
     gap: var(--gap-3xs);
     font-size: var(--font-size-3xs);
+
     .rectangle-parent {
       align-self: stretch;
       overflow: hidden;
@@ -139,6 +153,7 @@
       align-items: center;
       justify-content: center;
       gap: var(--gap-3xs);
+
       .frame-child {
         margin: 0;
         position: relative;
@@ -147,11 +162,13 @@
         width: 20px;
         height: 20px;
       }
+
       .i-agree-to-container {
         position: relative;
         margin: 0;
         flex: 1;
         font-size: var(--font-size-base);
+
         .terms-and-privacy {
           background: linear-gradient(
             90.36deg,
@@ -163,23 +180,25 @@
         }
       }
     }
+
     .registerButton {
       cursor: pointer;
       border: 0;
       padding: var(--padding-3xs);
-      background-color: $background-color_2;
-      border-radius: var(--br-3xs);
+      background-color: var(--background-color_2);
+      border-radius: var(--border-radius-3xs);
       background: linear-gradient(90.36deg, #00ff10, rgba(204, 255, 0, 0.8));
       overflow: hidden;
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: center;
+
       .loregisterButtonSubmit {
         position: relative;
         font-size: var(--font-size-xs);
-        font-family: $font-family_2;
-        color: $color_2;
+        font-family: var(--font-family_2);
+        color: var(--color_2);
         text-align: center;
         display: inline-block;
         width: 100px;

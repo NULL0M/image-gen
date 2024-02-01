@@ -45,6 +45,7 @@ export default function LoginPage({ openRegisterModal }) {
   return (
     <div className='loginpage'>
       <IoMdCloseCircle className='close-button' onClick={closeModal} />
+      <Link className='loginpage-child ' to='/' />
       <div className='welcome-back-parent'>
         <h2 className='welcome-back'>Welcome back</h2>
         <p className='please-enter-your-email'>

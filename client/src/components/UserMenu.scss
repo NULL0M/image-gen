@@ -1,3 +1,5 @@
+// client/src/components/UserMenu.scss
+
 @import '../styles/media-queries';
 @import '../styles/variables';
 @import '../styles/images';
@@ -22,9 +24,9 @@
     gap: var(--gap-3xs);
     padding: var(--padding-3xs) var(--padding-41xl);
     font-size: var(--font-size-11xl);
-    background-color: $background-color_5;
-    color: $color_1;
-    font-family: $font-family_2;
+    background-color: var(--background-color_5);
+    color: var(--color_1);
+    font-family: var(--font-family_2);
     border-radius: var(--br-xxl);
 
     .userlibrary {
@@ -37,17 +39,20 @@
       align-items: center;
       width: 5rem;
       height: 5rem;
-      color: $color_4;
+      color: var(--color_4);
       z-index: 100;
       margin-right: 2rem;
+
       .userIcon {
         font-size: var(--font-size-21xl);
         transition: 0.5s;
+
         &:hover {
-          color: $color_5;
-          filter: drop-shadow(0 0 15px $color_5);
+          color: var(--color_5);
+          filter: drop-shadow(0 0 15px var(--color_5));
         }
       }
+
       .title {
         position: absolute;
         pointer-events: none;
@@ -58,42 +63,47 @@
         text-transform: uppercase;
       }
     }
+
     .active {
       .userIcon {
-        color: $color_5;
-        filter: drop-shadow(0 0 15px $color_5);
+        color: var(--color_5);
+        filter: drop-shadow(0 0 15px var(--color_5));
         transform: translateY(-50px);
       }
+
       .title {
         opacity: 1;
-        color: $color_5;
-        filter: drop-shadow(0 0 10px $color_5);
+        color: var(--color_5);
+        filter: drop-shadow(0 0 10px var(--color_5));
       }
     }
+
     #marker {
       position: absolute;
       top: -58px;
       left: 60px;
       width: 5rem;
       height: 5rem;
-      background-color: $background-color_6;
+      background-color: var(--background-color_6);
       border-radius: var(--br-xl);
-      border-top: 2px solid $color_5;
-      border-left: 2px solid $color_5;
-      box-shadow: 0 0 0 5px $color_7, 0 2px 0 4px $color_5;
+      border-top: 2px solid var(--color_5);
+      border-left: 2px solid var(--color_5);
+      box-shadow: 0 0 0 5px var(--color_7), 0 2px 0 4px var(--color_5);
       transition: 0.8s;
+
       .marker {
         position: absolute;
         width: 120%;
         height: 30px;
         top: 122px;
         left: -10%;
-        background-color: $background-color_6;
+        background-color: var(--background-color_6);
         border-radius: var(--br-xl);
-        border-bottom: 1px solid $color_5;
-        border-right: 1px solid $color_5;
-        box-shadow: 0 0 0 5px $color_7, 0 -2px 0 4px $color_5;
+        border-bottom: 1px solid var(--color_5);
+        border-right: 1px solid var(--color_5);
+        box-shadow: 0 0 0 5px var(--color_7), 0 -2px 0 4px var(--color_5);
       }
+
       &::before {
         content: '';
         position: absolute;
@@ -103,8 +113,9 @@
         height: 10px;
         background: transparent;
         border-top-right-radius: 48px;
-        box-shadow: 3px -3px 0 1px $color_7;
+        box-shadow: 3px -3px 0 1px var(--color_7);
       }
+
       &::after {
         content: '';
         position: absolute;
@@ -114,8 +125,7 @@
         height: 10px;
         background: transparent;
         border-top-left-radius: 28px;
-
-        box-shadow: -3px -3px 0 1px $color_7;
+        box-shadow: -3px -3px 0 1px var(--color_7);
       }
     }
   }

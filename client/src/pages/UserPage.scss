@@ -1,3 +1,5 @@
+// client/src/pages/UserPage.scss
+
 @import '../styles/media-queries';
 @import '../styles/variables';
 @import '../styles/images';
@@ -37,8 +39,8 @@
         gap: var(--gap-17xl);
         text-align: center;
         font-size: var(--font-size-5xl);
-        color: $color_1;
-        font-family: $font-family_2;
+        color: var(--color_1);
+        font-family: var(--font-family_2);
         .userphoto-icon {
           position: relative;
           border-radius: 150px;
@@ -57,7 +59,7 @@
             margin: 0;
             position: relative;
             font-weight: 400;
-            font-family: $font-family_1;
+            font-family: var(--font-family_1);
             align-self: stretch;
             font-size: inherit;
           }
@@ -65,7 +67,7 @@
             margin: 0;
             position: relative;
             font-weight: 400;
-            font-family: $font-family_1;
+            font-family: var(--font-family_1);
             font-size: var(--font-size-base);
             display: inline-block;
             width: 32.13rem;
