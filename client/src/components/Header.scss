@@ -1,3 +1,5 @@
+//client/src/components/Header.scss
+
 @import '../styles/media-queries';
 @import '../styles/variables';
 
@@ -33,8 +35,8 @@
 
       font-size: var(--font-size-xl);
 
-      color: $color_1;
-      font-family: $font-family_2;
+      color: var(--color_1);
+      font-family: var(--font-family_2);
       overflow: hidden;
       display: flex;
       flex-direction: row;
@@ -59,7 +61,7 @@
           text-decoration: none;
           justify-content: center;
           padding: var(--padding-3xs);
-          color: $color_3;
+          color: var(--color_3);
         }
       }
     }

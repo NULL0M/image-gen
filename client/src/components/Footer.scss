@@ -1,18 +1,22 @@
-@import "../styles/media-queries";
-@import "../styles/variables";
-@import "../styles/images";
+// client/src/components/Footer.scss
+
+@import '../styles/media-queries';
+@import '../styles/variables';
+@import '../styles/images';
 
 footer {
   width: 100%;
   position: absolute;
   bottom: 0;
   background: linear-gradient(180deg, #000, #14181b);
-  color: $color_1; // Assuming $color_1 is defined in your variables
+  color: var(--color_1); // Assuming $color_1 is defined in your variables
   padding: 100px 0 30px;
   border-top-left-radius: 75px;
   font-size: 13px;
   line-height: 20px;
-  font-family: $font-family_2; // Assuming $font-family_2 is defined in your variables
+  font-family: var(
+    --font-family_2
+  ); // Assuming $font-family_2 is defined in your variables
 }
 
 .row {
@@ -29,8 +33,9 @@ footer {
   padding: 10px;
 }
 
-.col:nth-child(2), .col:nth-child(3) {
- flex-basis: 15%;
+.col:nth-child(2),
+.col:nth-child(3) {
+  flex-basis: 15%;
 }
 
 .logo {
@@ -67,16 +72,14 @@ form {
   justify-content: space-between;
   border-bottom: 1px solid #ccc;
   margin-bottom: 50px;
-
 }
 
-form .far{
+form .far {
   font-size: 18px;
   margin-right: 10px;
-  
 }
 
-form input{
+form input {
   width: 100%;
   background: transparent;
   color: #ccc;
@@ -84,19 +87,19 @@ form input{
   outline: none;
 }
 
-form button{
+form button {
   background: transparent;
   border: 0;
   outline: none;
   cursor: pointer;
 }
 
-form button .fas{
+form button .fas {
   font-size: 16px;
   color: #ccc;
 }
 
-social-icons .fab{
+.social-icons .fab {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -107,7 +110,6 @@ social-icons .fab{
   background: #fff;
   margin-right: 15px;
   cursor: pointer;
-
 }
 
 hr {
@@ -115,8 +117,6 @@ hr {
   border: 0;
   border-bottom: 1px solid #ccc;
   margin: 20px auto;
-
-
 }
 
 .copyright {
@@ -140,168 +140,5 @@ hr {
   border-radius: 3px;
   position: absolute;
   top: 0;
-  left: 10px; 
+  left: 10px;
 }
-
-// .footer {
-//   display: flex;
-//   flex-direction: row;
-//   flex-wrap: wrap;
-//   justify-content: space-around;
-//   flex: 1;
-//   align-self: stretch;
-//   background: linear-gradient(180deg, #000, #14181b);
-//   overflow: hidden;
-//   align-items: flex-start;
-//   padding: var(--padding-35xl) var(--padding-51xl);
-//   text-align: left;
-//   font-size: var(--font-size-base);
-//   color: $color_1; // Assuming $color_1 is defined in your variables
-//   font-family: $font-family_2; // Assuming $font-family_2 is defined in your variables
-//   .subfooter {
-//     display: flex;
-//     flex-direction: row;
-//     flex-wrap: wrap;
-//     justify-content: space-between;
-//     flex: 1;
-//     flex-shrink: 0;
-//     align-items: center;
-//     .theteam {
-//       display: flex;
-//       flex-direction: column;
-//       justify-content: flex-start;
-//       gap: var(--gap-3xs);
-//       flex-shrink: 0;
-//       align-items: center;
-//       .the-team {
-//         margin: 0;
-//         position: relative;
-//         font-size: inherit;
-//         font-weight: 400;
-//         font-family: $font-family_1; // Assuming $font-family_1 is defined in your variables
-//       }
-//       .teammembername-parent {
-//         display: flex;
-//         flex-direction: column;
-//         justify-content: flex-start;
-//         gap: var(--gap-3xs);
-//         align-self: stretch;
-//         align-items: flex-start;
-//         font-size: var(--font-size-xs);
-//         .teammembername {
-//           display: flex;
-//           flex-direction: row;
-//           align-items: center;
-//           justify-content: center;
-//           gap: var(--gap-3xs);
-
-//           .Rialfill {
-
-//           }
-
-//           .copyright-icon {
-//             position: relative;
-//             width: 1.56rem;
-//             height: 1.56rem;
-//             overflow: hidden;
-//             flex-shrink: 0;
-//             object-fit: cover;
-
-//           }
-//           .the-team {
-//             margin: 0;
-//             position: relative;
-//             font-size: inherit;
-//             font-weight: 400;
-//             font-family: $font-family_1; // Assuming $font-family_1 is defined in your variables
-//           }
-//         }
-//       }
-//     }
-//     .logofooter {
-//       flex-shrink: 0;
-//       display: flex;
-//       flex-direction: column;
-//       align-items: center;
-//       justify-content: flex-start;
-//       gap: var(--gap-6xs);
-//       text-align: center;
-//       font-size: var(--font-size-21xl);
-//       .logofooter-child {
-//         text-decoration: none;
-//         position: relative;
-//         width: 16.25rem;
-//         height: 5rem;
-//         background-image: $background-image_1; // Assuming $background-image_1 is defined in your variables
-//         background-size: cover;
-//         background-repeat: no-repeat;
-//         background-position: top;
-//         cursor: pointer;
-//       }
-//       .thanks-for-watching-container {
-//         margin: 0;
-//         position: relative;
-//         .thanks {
-//           display: block;
-//         }
-//         .for-watching {
-//           display: block;
-//           font-size: var(--font-size-3xs);
-//         }
-//       }
-//       .all-rights-reserved {
-//         margin: 0;
-//         position: relative;
-//         font-size: var(--font-size-xs);
-//         text-align: left;
-//       }
-//     }
-//   }
-//   .friendlylinks {
-//     display: flex;
-//     align-items: center;
-//     gap: var(--gap-3xs);
-//     flex-shrink: 0;
-//     flex-direction: column;
-//     justify-content: flex-start;
-//     .theteam {
-//       display: flex;
-//       flex-direction: column;
-//       justify-content: flex-start;
-//       gap: var(--gap-3xs);
-//       flex-shrink: 0;
-//       align-items: center;
-//       .the-team {
-//         margin: 0;
-//         position: relative;
-//         font-size: inherit;
-//         font-weight: 400;
-//         font-family: $font-family_1; // Assuming $font-family_1 is defined in your variables
-//       }
-//       .teammembername-parent {
-//         display: flex;
-//         flex-direction: column;
-//         justify-content: flex-start;
-//         gap: var(--gap-3xs);
-//         align-self: stretch;
-//         align-items: flex-start;
-//         font-size: var(--font-size-xs);
-//         .teammembername {
-//           display: flex;
-//           flex-direction: row;
-//           align-items: center;
-//           justify-content: center;
-//           gap: var(--gap-3xs);
-//           .copyright-icon {
-//             position: relative;
-//             width: 1.56rem;
-//             height: 1.56rem;
-//             overflow: hidden;
-//             flex-shrink: 0;
-//             object-fit: cover;
-//           }
-//         }
-//       }
-//     }
-//   }
-// }

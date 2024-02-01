@@ -1,16 +1,19 @@
-@import "../styles/media-queries";
-@import "../styles/variables";
+// client/src/components/ButtonGenerateImage.scss
+
+@import '../styles/media-queries';
+@import '../styles/variables';
 
 .buttongenerateimage {
   cursor: pointer;
   border: 0;
   padding: 0;
-  background-color: $background-color_2;
+  background-color: var(--background-color-2); /* Use variable */
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+
   .ellipse-parent {
     border-radius: var(--br-3xs);
     background: linear-gradient(90.36deg, #00ff10, rgba(204, 255, 0, 0.8));
@@ -24,18 +27,20 @@
     padding: var(--padding-3xs);
     box-sizing: border-box;
     gap: var(--gap-3xs);
+
     .frame-item {
       position: relative;
       border-radius: 50%;
-      background-color: $background-color_1;
+      background-color: var(--background-color-1); /* Use variable */
       width: 0.06rem;
       height: 0.06rem;
     }
+
     .generate-image {
       position: relative;
       font-size: var(--font-size-base);
-      font-family: $font-family_2;
-      color: $color_2;
+      font-family: var(--font-family-2); /* Use variable */
+      color: var(--color-black); /* Use variable */
       text-align: left;
     }
   }

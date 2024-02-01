@@ -1,6 +1,7 @@
+// client/src/components/LoginPage.scss
+@import '../styles/images';
 @import '../styles/media-queries';
 @import '../styles/variables';
-@import '../styles/images';
 
 .loginpage {
   overflow: hidden;
@@ -24,14 +25,14 @@
   gap: var(--gap-21xl);
   text-align: left;
   font-size: var(--font-size-13xl);
-  color: $color_1;
-  font-family: $font-family_2;
+  color: var(--color_1);
+  font-family: var(--font-family_2);
   position: fixed;
   top: 3rem;
   left: 35%;
   z-index: 1000;
   max-width: 80vw;
-  max-height: 80vh;
+
   .close-button {
     cursor: pointer;
     position: relative;
@@ -51,6 +52,7 @@
     background-repeat: no-repeat;
     background-position: top;
   }
+
   .welcome-back-parent {
     flex-shrink: 0;
     display: flex;
@@ -58,24 +60,28 @@
     align-items: center;
     justify-content: flex-start;
     gap: var(--gap-3xs);
+
     .welcome-back {
       margin: 0;
       position: relative;
       font-size: inherit;
       font-weight: 400;
-      font-family: $font-family_1;
+      font-family: var(--font-family_1);
       white-space: pre-wrap;
       font-size: var(--font-size-21xl);
     }
+
     .please-enter-your-email {
       margin: 0;
       position: relative;
       font-size: var(--font-size-xl);
     }
   }
+
   form {
     border: 0;
   }
+
   .email-form {
     display: flex;
     flex-direction: column;
@@ -88,9 +94,9 @@
       cursor: pointer;
       position: relative;
       text-align: left;
-      font-family: $font-family_2;
+      font-family: var(--font-family_2);
       font-size: var(--font-size-xl);
-      color: $color_1;
+      color: var(--color_1);
     }
 
     .email-container {
@@ -108,15 +114,16 @@
         display: inline-block;
         flex-shrink: 0;
         text-align: left;
-        font-family: $font-family_2;
+        font-family: var(--font-family_2);
         font-size: var(--font-size-xl);
         border: 0;
         outline: 0;
-        background-color: $background-color_2;
-        color: $color_4;
+        background-color: var(--background-color_2);
+        color: var(--color_4);
       }
+
       .toggle-password {
-        color: $color_5;
+        color: var(--color_5);
       }
     }
 
@@ -125,11 +132,11 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-      justify-content: center; // Adicionado para centralizar horizontalmente
-      margin: auto; // Adicionado para centralizar horizontalmente
+      justify-content: center;
+      margin: auto;
       border: 0;
       padding: var(--padding-3xs);
-      background-color: $background-color_2;
+      background-color: var(--background-color_2);
       border-radius: var(--br-3xs);
       background: var(--color-background-button);
       overflow: hidden;
@@ -141,20 +148,24 @@
         flex-shrink: 0;
         text-align: center;
         font-size: var(--font-size-base);
-        font-family: $font-family_2;
-        color: $color_2;
+        font-family: var(--font-family_2);
+        color: var(--color_2);
       }
     }
   }
+
   .forgot-password-link {
     text-decoration: none;
     text-align: center;
+    color: var(--color_1);
+
     &:hover,
     &:active,
     &:visited {
-      color: $color_1;
+      color: var(--color_1);
     }
   }
+
   .dont-have-an-account-yet-parent {
     overflow: hidden;
     display: flex;
@@ -166,18 +177,20 @@
     padding: var(--padding-3xs) 43px;
     gap: var(--gap-3xs);
     font-size: var(--font-size-base);
+
     .dont-have-an {
       margin: 0;
       position: relative;
       font-size: inherit;
       font-weight: 400;
-      font-family: $font-family_1;
+      font-family: var(--font-family_1);
     }
+
     .registerButton {
       cursor: pointer;
       border: 0;
       padding: var(--padding-3xs);
-      background-color: $background-color_2;
+      background-color: var(--background-color_2);
       border-radius: var(--br-3xs);
       background: var(--color-background-button);
       overflow: hidden;
@@ -185,11 +198,12 @@
       flex-direction: row;
       align-items: center;
       justify-content: center;
+
       .loregisterButtonSubmit {
         position: relative;
         font-size: var(--font-size-base);
-        font-family: $font-family_2;
-        color: $color_2;
+        font-family: var(--font-family_2);
+        color: var(--color_2);
         text-align: center;
         display: inline-block;
         width: 150px;

@@ -1,6 +1,6 @@
-$color_1: var(--color-white);
-$font-family_1: inherit;
-$font-family_2: var(--font-globally-designated);
+// client/src/pages/TermsAndPrivacyPolicy.scss
+
+@import '../styles/variables';
 
 .termsandprivacypolicy {
   display: flex;
@@ -30,15 +30,15 @@ $font-family_2: var(--font-globally-designated);
       gap: var(--gap-17xl);
       text-align: center;
       font-size: var(--font-size-45xl);
-      color: $color_1;
-      font-family: $font-family_2;
+      color: var(--color_1);
+      font-family: var(--font-family_2);
       .terms-and-privacy-title {
         margin: 0;
         align-self: stretch;
         position: relative;
         font-size: inherit;
         font-weight: 400;
-        font-family: $font-family_1;
+        font-family: var(--font-family_1);
         background: linear-gradient(90.36deg, #00ff10, rgba(204, 255, 0, 0.8));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;

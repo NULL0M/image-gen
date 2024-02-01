@@ -1,0 +1,93 @@
+@import '../styles/media-queries';
+@import '../styles/variables';
+@import '../styles/images';
+
+.userpage {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: linear-gradient(155.84deg, #15181a, #0a0c0e 44.92%, #0b1013);
+  overflow: hidden;
+  align-items: flex-start;
+  justify-content: flex-start;
+  .main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 0 var(--padding-61xl);
+    box-sizing: border-box;
+    .usercontainer {
+      flex: 1;
+      overflow: hidden;
+      display: flex;
+      align-self: stretch;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: var(--gap-3xs);
+
+      .userprofile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        gap: var(--gap-17xl);
+        text-align: center;
+        font-size: var(--font-size-5xl);
+        color: $color_1;
+        font-family: $font-family_2;
+        .userphoto-icon {
+          position: relative;
+          border-radius: 150px;
+          width: 14.56rem;
+          height: 15.25rem;
+          object-fit: cover;
+        }
+        .useridentification {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          align-self: stretch;
+          gap: 0.31rem;
+          .username {
+            margin: 0;
+            position: relative;
+            font-weight: 400;
+            font-family: $font-family_1;
+            align-self: stretch;
+            font-size: inherit;
+          }
+          .email {
+            margin: 0;
+            position: relative;
+            font-weight: 400;
+            font-family: $font-family_1;
+            font-size: var(--font-size-base);
+            display: inline-block;
+            width: 32.13rem;
+          }
+        }
+      }
+    }
+    .usercontent {
+      overflow: visible;
+      width: 76.25rem;
+      margin-top: 5rem;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: var(--padding-19xl) var(--padding-49xl);
+      gap: var(--gap-10xl);
+      .userlibrarycontainer {
+        align-self: stretch;
+        position: relative;
+        overflow: hidden;
+      }
+    }
+  }
+}
