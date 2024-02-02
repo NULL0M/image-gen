@@ -1,7 +1,34 @@
 // image-gen/client/src/pages/TheProject.jsx
 
-import "./TheProject.scss";
+import { useState } from 'react';
+import './TheProject.scss';
 
 export default function TheProject() {
-  return <div>TheProject</div>;
+  return (
+    <>
+      <div className='loader'>
+        <div className='static'>
+          <div className='static-ring-1'></div>
+          <div className='static-ring-2'></div>
+          <div className='static-ring-3'></div>
+          <div className='static-ring-4'></div>
+          <div className='static-ring-5'></div>
+          <div className='static-ring-6'></div>
+          <div className='static-ring-7'></div>
+          <div className='static-center'></div>
+        </div>
+        <div className='Animations'>
+          <div className='ring-1'></div>
+          <div className='ring-2'></div>
+          <div className='ring-3'></div>
+          <div className='ring-4'></div>
+          <div className='ring-5'></div>
+          <div className='ring-6'></div>
+          <div className='ring-7'></div>
+          <div className='center'></div>
+        </div>
+      </div>
+      <button>Iniciar Animação</button>
+    </>
+  );
 }
