@@ -4,10 +4,8 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from './Header';
 import { getRandomPrompt } from '../utils';
-import preview from '../assets/preview.png';
 import FormField from './FormField';
-import Loader from './Loader';
-
+import { StaticLoader, AnimatedLoader } from './Loader'; // Importando as classes StaticLoader e AnimatedLoader
 import './TextToImageGenerator.scss';
 
 export const TextToImageGenerator = () => {
@@ -59,6 +57,7 @@ export const TextToImageGenerator = () => {
       alert('Please provide proper prompt');
     }
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -135,12 +134,12 @@ export const TextToImageGenerator = () => {
                   className='my-generated-image'
                 />
               ) : (
-                <img src={preview} alt='preview' className='my-image' />
+                !generatingImg && <StaticLoader />
               )}
 
               {generatingImg && (
                 <div className='my-overlay'>
-                  <Loader />
+                  <AnimatedLoader /> {/* Usando o componente AnimatedLoader */}
                 </div>
               )}
             </div>
