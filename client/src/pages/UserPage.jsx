@@ -34,7 +34,7 @@ const UserPage = () => {
           <section className='userprofile'>
             <img className='userphoto-icon' alt='' src='/userphoto@2x.png' />
             <div className='useridentification'>
-              <h2 className='username'>Username</h2>
+              <h2 className='user'>user</h2>
               <h3 className='email'>Email</h3>
             </div>
           </section>

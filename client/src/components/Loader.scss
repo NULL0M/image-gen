@@ -95,10 +95,10 @@ $border-left-color_1: #81fe04;
     align-items: center;
     justify-content: center;
     .static-center {
-      width: 25px;
-      height: 25px;
+      width: 35px;
+      height: 35px;
       background: none;
-      border: 10px solid #04fe10;
+      border: 12px solid #04fe10;
       border-top-color: $border-top-color_1;
       border-radius: 50%;
       rotate: 45deg;
@@ -153,7 +153,7 @@ $border-left-color_1: #81fe04;
       border-top-color: $border-top-color_1;
       border-right-color: $border-right-color_2;
       border-radius: 50%;
-      rotate: -45deg;
+      rotate: 45deg;
     }
     .static-ring-4 {
       position: absolute;
@@ -182,7 +182,7 @@ $border-left-color_1: #81fe04;
       justify-content: center;
       width: 230px;
       height: 230px;
-      border: 15px solid #04fe10;
+      border: 13px solid #04fe10;
       border-top-color: $border-top-color_1;
       border-radius: 50%;
       rotate: -45deg;
@@ -246,9 +246,9 @@ $border-left-color_1: #81fe04;
       // z-index: 1;
       &::after {
         content: '';
-        width: 25px;
-        height: 25px;
-        border: 10px solid #04fe10;
+        width: 35%;
+        height: 35%;
+        border: 12px solid #04fe10;
         border-top-color: $border-top-color_1;
         border-radius: 50%;
         rotate: 45deg;
@@ -322,7 +322,7 @@ $border-left-color_1: #81fe04;
         border-top-color: $border-top-color_1;
         border-right-color: $border-right-color_2;
         border-radius: 50%;
-        rotate: -45deg;
+        rotate: 45deg;
         animation: ring-5 40s ease infinite;
       }
     }
@@ -366,7 +366,7 @@ $border-left-color_1: #81fe04;
         content: '';
         width: 230px;
         height: 230px;
-        border: 15px solid #04fe10;
+        border: 13px solid #04fe10;
         border-top-color: $border-top-color_1;
         border-radius: 50%;
         rotate: -45deg;

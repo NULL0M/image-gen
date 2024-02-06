@@ -1,11 +1,13 @@
 // client/src/components/TextToImageGenerator.jsx
 
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from './Header';
 import { getRandomPrompt } from '../utils';
 import FormField from './FormField';
-import { StaticLoader, AnimatedLoader } from './Loader'; // Importando as classes StaticLoader e AnimatedLoader
+import { MyContext } from '../contexts/context';
+
+import { StaticLoader, AnimatedLoader } from './Loader'; // Importing the StaticLoader and AnimatedLoader classes
 import './TextToImageGenerator.scss';
 
 export const TextToImageGenerator = () => {
@@ -16,11 +18,10 @@ export const TextToImageGenerator = () => {
     prompt: '',
     photo: '',
   });
-
+  const { post, setPost } = useContext(MyContext);
   const [generatingImg, setGeneratingImg] = useState(false);
   const [loading, setLoading] = useState(false);
   const [showImage, setShowImage] = useState(false);
-  const [showPreview, setShowPreview] = useState(true);
 
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -47,14 +48,14 @@ export const TextToImageGenerator = () => {
 
         const data = await response.json();
         setForm({ ...form, photo: `data:image/jpeg;base64,${data.photo}` });
-        setShowImage(true); // Mostra a imagem
+        setShowImage(true); // show image
       } catch (err) {
         alert(err);
       } finally {
         setGeneratingImg(false);
       }
     } else {
-      alert('Please provide proper prompt');
+      alert('Please provide an appropriate prompt');
     }
   };
 
@@ -69,20 +70,24 @@ export const TextToImageGenerator = () => {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
+            'Authorization': localStorage.getItem('token'),
           },
           body: JSON.stringify({ ...form }),
         });
 
         if (!response.ok) {
-          throw new Error(`Server responded with ${response.status} status`);
+          throw new Error(`The server responded with status${response.status}`);
         }
 
         const data = await response.json();
 
+        console.log(data);
+
+        setPost(data);
         alert('Success');
         navigate('/');
       } catch (err) {
-        console.log('Error creating post', err);
+        console.log('Err', err);
         alert('Error creating post - please try again');
       } finally {
         setLoading(false);
@@ -139,7 +144,7 @@ export const TextToImageGenerator = () => {
 
               {generatingImg && (
                 <div className='my-overlay'>
-                  <AnimatedLoader /> {/* Usando o componente AnimatedLoader */}
+                  <AnimatedLoader /> {/* Using the AnimatedLoader component*/}
                 </div>
               )}
             </div>

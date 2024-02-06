@@ -1,22 +1,20 @@
 // client/src/components/CreateAccountPage.jsx
 
-import { Toaster } from 'react-hot-toast'; //this is for popups after login
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { MyContext } from '../contexts/context';
 import { IoMdCloseCircle } from 'react-icons/io';
 import { TbEye, TbEyeClosed } from 'react-icons/tb';
-
 import './CreateAccountPage.scss';
 
 export default function CreateAccountPage() {
-  const { user, closeModal, togglePasswordVisibility, showPassword } =
+  const { closeModal, togglePasswordVisibility, showPassword } =
     useContext(MyContext);
 
   const register = async (e) => {
     e.preventDefault();
     const user = {
-      username: e.target.username.value,
+      user: e.target.user.value,
       email: e.target.email.value,
       password: e.target.password.value,
     };
@@ -30,20 +28,18 @@ export default function CreateAccountPage() {
         }
       );
       if (response.ok) {
-        // Registration successful, display success alert
         alert('Account created successfully! You can now log in.');
-        closeModal(); // Close the modal or redirect the user as needed
+        closeModal(); // Closes the modal after successful registration
       } else {
-        // Registration failed, display error alert
         const errorData = await response.json();
         alert(`Registration failed: ${errorData.message}`);
       }
     } catch (error) {
-      // Handle network errors or other issues
       console.error('Error during registration:', error);
       alert('Error during registration. Please try again.');
     }
   };
+
   return (
     <div className='createaccountpage'>
       <IoMdCloseCircle className='close-button' onClick={closeModal} />
@@ -59,8 +55,8 @@ export default function CreateAccountPage() {
           <input
             className='user-name1'
             type='text'
-            id='username'
-            name='username'
+            id='user'
+            name='user'
             placeholder='User Name'
           />
         </span>

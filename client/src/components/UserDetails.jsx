@@ -3,11 +3,11 @@ import { MyContext } from '../contexts/context';
 import './UserDetails.scss';
 
 const UserDetails = () => {
-  const { user } = useContext(MyContext);
+  const { post } = useContext(MyContext);
 
   // Verifica se user está null antes de tentar acessar suas propriedades
   const initialUserData = {
-    username: user?.username || '',
+    user: user?.user || '',
     email: user?.email || '',
     password: user?.password || '',
   };
@@ -26,7 +26,7 @@ const UserDetails = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-        `http://localhost:8090/api/v1/user/users/${userData.username}`
+        `http://localhost:8090/api/v1/user/users/${userData.user}`
       );
       if (response.ok) {
         const userDataFromServer = await response.json();
@@ -51,9 +51,9 @@ const UserDetails = () => {
               <input
                 className='user-name1'
                 type='text'
-                id='username'
-                name='username'
-                value={userData.username}
+                id='user'
+                name='user'
+                value={userData.user}
                 onChange={handleChange}
               />
             </span>
