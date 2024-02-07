@@ -18,7 +18,9 @@ const Card = ({ _id, prompt, userID, photo, positionInGrid }) => {
 
         <div className='user-details-container'>
           <div className='user-avatar'></div>
-          <p className='user-name'>{userID ? userID.user : 'no data'}</p>
+          <p className='user-name'>
+            {userID ? userID.user : 'ImageAIGenerator'}
+          </p>
         </div>
 
         <button

@@ -15,7 +15,7 @@ export default function LoginPage({ openRegisterModal }) {
     e.preventDefault();
 
     const loginInfo = {
-      user: e.target.user.value,
+      username: e.target.user.value,
       password: e.target.password.value,
     };
 
