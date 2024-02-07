@@ -13,6 +13,23 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
+router.get('/user/:userId', async (req, res) => {
+  try {
+    const userId = req.params.userId;
+
+    // Query the database to find posts associated with the user ID
+    const userPosts = await Post.find({ userID: userId }).populate('userID');
+
+    res.status(200).json({ success: true, data: userPosts });
+  } catch (err) {
+    console.error('Error fetching user posts:', err);
+    res.status(500).json({
+      success: false,
+      message: 'Error fetching user posts, check console for details',
+    });
+  }
+});
+
 router.post('/', verifyToken, async (req, res) => {
   try {
     // console.log(req.body);
