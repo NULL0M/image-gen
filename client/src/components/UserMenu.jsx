@@ -1,3 +1,5 @@
+// client/src/components/UserMenu.jsx
+
 import { IoPerson } from 'react-icons/io5';
 import { IoMdPhotos } from 'react-icons/io';
 import { useEffect } from 'react';

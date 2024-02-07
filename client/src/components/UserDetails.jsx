@@ -1,3 +1,5 @@
+// client/src/components/UserDetails.jsx
+
 import { useState, useContext } from 'react';
 import { MyContext } from '../contexts/context';
 import './UserDetails.scss';
@@ -5,13 +7,13 @@ import './UserDetails.scss';
 const UserDetails = ({ _id, prompt, userID, photo, positionInGrid }) => {
   const { user } = useContext(MyContext);
 
-  // Verifica se user está null antes de tentar acessar suas propriedades
+  //Checks if user is null before trying to access its properties
   const initialUserData = {
     username: user?.username || '',
     email: user?.email || '',
     password: user?.password || '',
   };
-console.log('see the errr',initialUserData)
+  // console.log('see the err',initialUserData)
   const [userData, setUserData] = useState(initialUserData);
 
   const handleChange = (e) => {
@@ -26,7 +28,7 @@ console.log('see the errr',initialUserData)
     e.preventDefault();
     try {
       const response = await fetch(
-        `http://localhost:8090/api/v1/user/users/${userData.user}`,
+        `https://image-aigenerator.onrender.com/api/v1/user/users/${userData.user}`
       );
       if (response.ok) {
         const userDataFromServer = await response.json();

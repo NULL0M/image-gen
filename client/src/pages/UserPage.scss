@@ -25,6 +25,7 @@
       flex: 1;
       overflow: hidden;
       display: flex;
+      align-content: flex-start;
       align-self: stretch;
       flex-direction: row;
       flex-wrap: wrap;
@@ -34,12 +35,13 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         overflow: hidden;
+        margin-top: 4rem;
+        color: var(--color_1);
         gap: var(--gap-17xl);
         text-align: center;
         font-size: var(--font-size-5xl);
-        color: var(--color_1);
         font-family: var(--font-family_2);
         .userphoto-icon {
           position: relative;

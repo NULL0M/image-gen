@@ -1,6 +1,5 @@
 // src/components/ButtonStartCreating.jsx
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
 import { MyContext } from '../contexts/context';
 import './ButtonStartCreating.scss';
 
@@ -10,10 +9,10 @@ export const ButtonStartCreating = () => {
 
   const handleClick = () => {
     if (user) {
-      // Se o usuário estiver logado, redirecione para '/createpost'
+      // If the user is logged in, redirect to '/createpost'
       window.location.href = '/createpost';
     } else {
-      // Se o usuário não estiver logado, exiba o LoginPage
+      // If the user is not logged in, display the LoginPage
       setShowLogin(true);
     }
   };
@@ -22,7 +21,7 @@ export const ButtonStartCreating = () => {
   return (
     // Container for the button, utilizing the "buttonstartcreating" CSS class for styling.
     <div className='buttonstartcreating'>
-      {/* Ao clicar no link, verifique o estado do usuário e redirecione conforme necessário */}
+      {/* On clicking the link, check the user's state and redirect as necessary */}
       <div className='ellipse-group' onClick={handleClick}>
         <div className='frame-inner' />
         <div className='start-creating-for'>{`Start creating for free  -> `}</div>

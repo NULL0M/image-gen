@@ -1,3 +1,5 @@
+// client/src/components/UserPhotos.jsx
+
 import React, { useEffect, useState } from 'react';
 import Card from './Card';
 import './UserPhotos.scss';
@@ -10,12 +12,15 @@ const UserPhotos = ({ userId }) => {
     const fetchUserPosts = async () => {
       setLoading(true);
       try {
-        const response = await fetch(`http://localhost:8090/api/v1/post?user=${userId}`, {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        });
+        const response = await fetch(
+          `https://image-aigenerator.onrender.com/api/v1/post?user=${userId}`,
+          {
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          }
+        );
 
         if (response.ok) {
           const result = await response.json();
@@ -31,8 +36,9 @@ const UserPhotos = ({ userId }) => {
         setLoading(false);
       }
     };
-
+    // if (userId) {
     fetchUserPosts();
+    // }
   }, [userId]);
 
   // Custom reusable component to render list of Card components

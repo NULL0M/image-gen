@@ -20,7 +20,7 @@ export default function CreateAccountPage() {
     };
     try {
       const response = await fetch(
-        'http://localhost:8090/api/v1/user/register',
+        'https://image-aigenerator.onrender.com/api/v1/user/register',
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },

@@ -43,13 +43,14 @@
     .start-creating-for {
       position: relative;
       white-space: pre-wrap;
+      font-size: var(--font-size-5xl);
     }
   }
 
   .create-your-digital {
     margin: 0;
     position: relative;
-    font-size: var(--font-size-xs);
+    font-size: var(--font-size-base);
     font-weight: 400;
     font-family: var(--font-family-1); /* Use variable */
     color: var(--color-white); /* Use variable */

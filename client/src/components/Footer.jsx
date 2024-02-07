@@ -13,12 +13,11 @@ export const Footer = () => {
     <footer className='footer'>
       <div className='row'>
         <div className='col'>
-          <img  alt='' src={Logo} />
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Asperiores, ratione ipsam repellat, iure dolore quas error doloribus
-            culpa repudiandae vero quo quis qui suscipit architecto magnam
-            soluta repellendus fugit libero?
+          <img alt='' src={Logo} />
+          <p className='sentence'>
+            Unlock the power of creativity with ImageAIGenerator: Where
+            innovation meets imagination, crafting images through the lens of
+            artificial intelligence.
           </p>
         </div>
         <div className='col'>
@@ -87,63 +86,6 @@ export const Footer = () => {
       </div>
       <hr />
       <p className='copyright'> All rights reserved AI imageGenerator© 2024 </p>
-
-      {/* <div className="subfooter">
-        <div className="theteam">
-          <h3 className="the-team">The Team</h3>
-          <div className="teammembername-parent">
-            <div className="teammembername">
-              <FaRegCopyright className="copyright-icon" />
-              <h4 className="the-team">{`Copyright - Aleksandra `}</h4>
-            </div>
-            <div className="teammembername">
-             <FaRegCopyright className="copyright-icon" />
-              <h4 className="the-team">Copyright - Alex</h4>
-            </div>
-            <div className="teammembername">
-              <FaRegCopyright className="copyright-icon" />
-              <h4 className="the-team">Copyright - Ali</h4>
-            </div>
-            <div className="teammembername">
-              <FaRegCopyright className="copyright-icon" />
-              <h4 className="the-team">Copyright - Deolindo Baptista</h4>
-            </div>
-          </div>
-        </div>
-        <div className="logofooter">
-          <a className="logofooter-child" />
-          <p className="thanks-for-watching-container">
-            <span className="thanks">
-              <span>THANKS</span>
-            </span>
-            <span className="for-watching">
-              <span>FOR WATCHING</span>
-            </span>
-          </p>
-          <p className="all-rights-reserved"> All rights reserved</p>
-        </div>
-        <div className="theteam">
-          <h2 className="the-team">Friendly Links</h2>
-          <div className="teammembername-parent">
-            <div className="teammembername">
-              <FaRegCopyright className="copyright-icon" />
-              <h4 className="the-team">{`Copyright - Aleksandra `}</h4>
-            </div>
-            <div className="teammembername">
-              <FaRegCopyright className="copyright-icon" />
-              <h4 className="the-team">Copyright - Alex</h4>
-            </div>
-            <div className="teammembername">
-              <FaRegCopyright className="copyright-icon" />
-              <h4 className="the-team">Copyright - Ali</h4>
-            </div>
-            <div className="teammembername">
-              <FaRegCopyright className="copyright-icon" />
-              <h4 className="the-team">Copyright - Deolindo Baptista</h4>
-            </div>
-          </div>
-        </div>
-      </div> */}
     </footer>
   );
 };
