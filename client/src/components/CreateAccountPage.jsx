@@ -14,7 +14,7 @@ export default function CreateAccountPage() {
   const register = async (e) => {
     e.preventDefault();
     const user = {
-      user: e.target.user.value,
+      username: e.target.user.value,
       email: e.target.email.value,
       password: e.target.password.value,
     };
@@ -47,7 +47,7 @@ export default function CreateAccountPage() {
       <div className='hello-there-parent'>
         <h2 className='hello-there'>Hello there!</h2>
         <p className='welcome-to-imageaigenerator'>{`Welcome to ImageAIGenerator, please enter your email & password to create an account`}</p>
-        <Toaster position='top-center' />
+        {/* <Toaster position='top-center' /> */}
       </div>
       <form className='user-name-parent' action='' onSubmit={register}>
         <label className='user-name'>User Name</label>
