@@ -3,7 +3,7 @@
 import mongoose from 'mongoose';
 
 const UserSchema = new mongoose.Schema({
-  username: {
+  user: {
     type: String,
     required: true,
     /* min: 3,
@@ -22,4 +22,4 @@ const UserSchema = new mongoose.Schema({
   },
 });
 
-export const UserModel = mongoose.model('users', UserSchema);
+export const UserModel = mongoose.model('User', UserSchema);

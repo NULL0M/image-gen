@@ -56,18 +56,3 @@ router.get('/users/:username', async (req, res) => {
 });
 
 export { router as usersRouter };
-
-// Middleware for token verification
-export const verifyToken = (req, res, next) => {
-  const authHeader = req.headers.authorization;
-  if (authHeader) {
-    jwt.verify(authHeader, 'secret', (err) => {
-      if (err) {
-        return res.sendStatus(403);
-      }
-      next();
-    });
-  } else {
-    res.sendStatus(401);
-  }
-};

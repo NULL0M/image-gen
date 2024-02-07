@@ -1,30 +1,36 @@
 // image-gen/client/src/components/Card.jsx
+import { useContext } from 'react';
 import { download } from '../assets';
 import { downloadImage } from '../utils';
+
 import './Card.scss';
 
-const Card = ({ _id, name = '', prompt, photo, positionInGrid }) => (
-  <div className={`card ${getImageClass(positionInGrid)}`}>
-    <img className='card-image' src={photo} alt={prompt} />
+import { MyContext } from '../contexts/context';
+const Card = ({ _id, prompt, photo, positionInGrid }) => {
+  const { post } = useContext(MyContext);
+  console.log(post);
+  return (
+    <div className={`card ${getImageClass(positionInGrid)}`}>
+      <img className='card-image' src={photo} alt={prompt} />
 
-    <div className='group-hover-container'>
-      <p className='prompt'>{prompt}</p>
+      <div className='group-hover-container'>
+        <p className='prompt'>{prompt}</p>
 
-      <div className='user-details-container'>
-        <div className='user-avatar'>{name[0]}</div>
-        <p className='user-name'>{name}</p>
+        <div className='user-details-container'>
+          <div className='user-avatar'></div>
+          <p className='user-name'>{post?.data?.userID.user}</p>
+        </div>
+
+        <button
+          type='button'
+          onClick={() => downloadImage(_id, photo)}
+          className='download-button'>
+          <img src={download} alt='download' className='download-icon' />
+        </button>
       </div>
-
-      <button
-        type='button'
-        onClick={() => downloadImage(_id, photo)}
-        className='download-button'>
-        <img src={download} alt='download' className='download-icon' />
-      </button>
     </div>
-  </div>
-);
-
+  );
+};
 const getImageClass = (positionInGrid) => {
   switch (positionInGrid) {
     case 1:

@@ -1,0 +1,17 @@
+.frame-section {
+  align-self: stretch;
+  height: 69.5rem;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-43xl) var(--padding-3xs);
+  box-sizing: border-box;
+  gap: var(--gap-17xl);
+  text-align: center;
+  font-size: var(--font-size-45xl);
+  color: var(--color-white);
+  font-family: var(--font-pathway-gothic-one);
+}

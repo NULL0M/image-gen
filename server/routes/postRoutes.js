@@ -1,10 +1,9 @@
+// server/routes/postRoutes.js
 import express from 'express';
-import * as dotenv from 'dotenv';
-import { v2 as cloudinary } from 'cloudinary';
-
+import cloudinary from 'cloudinary';
 import Post from '../mongodb/models/post.js';
-
-dotenv.config();
+import { UserModel } from '../mongodb/models/Users.js';
+import { verifyToken } from '../middleware/auth.js'; // Import the token verification function
 
 const router = express.Router();
 
@@ -14,43 +13,55 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-router.post('/', async (req, res) => {
-  console.log(req.body);
+router.post('/', verifyToken, async (req, res) => {
   try {
+    // console.log(req.body);
     const { prompt, photo } = req.body;
+    const userId = req.user.id;
 
+    const user = await UserModel.findById(userId);
+
+    if (!user) {
+      throw new Error('User not found');
+    }
+    // console.log(user);
+    // console.log('Upload image of Cloudinary...');
     const photoUrl = await cloudinary.uploader.upload(photo, {
       folder: 'posts',
     });
-    console.log(photoUrl);
+    // console.log('URL of image:', photoUrl);
+    // console.log('Create new post...');
+    // console.log(user);
     const newPost = await Post.create({
+      userID: user._id,
       prompt,
       photo: photoUrl.url,
     });
 
-    res.status(200).json({ success: true, data: newPost });
+    const getPost = await Post.findById(newPost._id).populate('userID');
+    console.log('test', getPost);
+    res.status(200).json({ success: true, data: getPost });
   } catch (err) {
-    res.json({
+    console.error('Error create post:', err); // Add a console.error to log any errors that occur during the process
+    res.status(500).json({
       success: false,
-      message: err,
-      // message: 'Unable to create a post, please try again',
+      message: 'Error creating post, check console for details',
     });
   }
 });
 
-router.route('/').get(async (req, res) => {
+// Add a console.error to log any errors that occur during the process
+router.get('/', async (req, res) => {
   try {
     const posts = await Post.find({});
     res.status(200).json({ success: true, data: posts });
   } catch (err) {
+    console.error('Error fetching posts:', err); // Add a console.error to log any errors that occurred during the process
     res.status(500).json({
       success: false,
-      message: 'Fetching posts failed, please try again',
+      message: 'Error fetching posts, check console for details',
     });
   }
 });
-// router.route('/test').post(async (req, res) => {
-
-// });
 
 export default router;

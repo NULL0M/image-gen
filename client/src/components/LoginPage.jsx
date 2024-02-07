@@ -1,5 +1,5 @@
 // client/src/components/LoginPage.jsx
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { MyContext } from '../contexts/context';
 import { IoMdCloseCircle } from 'react-icons/io';
@@ -15,26 +15,32 @@ export default function LoginPage({ openRegisterModal }) {
     e.preventDefault();
 
     const loginInfo = {
-      username: e.target.username.value,
+      user: e.target.user.value,
       password: e.target.password.value,
     };
 
-    const response = await fetch('http://localhost:8090/api/v1/user/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(loginInfo),
-    });
+    try {
+      const response = await fetch('http://localhost:8090/api/v1/user/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(loginInfo),
+      });
 
-    const results = await response.json();
+      const results = await response.json();
 
-    if (results) {
-      setUser(results.user);
-      redirectUser('/');
-      closeModal();
-    } else {
-      alert('Login failed. Please check your credentials and try again.');
+      if (response.ok) {
+        localStorage.setItem('token', results.token); // Stores the token in localStorage
+        setUser(results.user);
+        redirectUser('/');
+        closeModal();
+      } else {
+        alert('Login failed. Please check your credentials and try again.');
+      }
+    } catch (error) {
+      console.error('Error logging in:', error);
+      alert('Error logging in. Please try again.');
     }
   };
 
@@ -58,8 +64,8 @@ export default function LoginPage({ openRegisterModal }) {
           <input
             className='email3'
             type='text'
-            id='username'
-            name='username'
+            id='user'
+            name='user'
             placeholder='User Name'
           />
         </span>

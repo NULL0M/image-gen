@@ -1,7 +1,9 @@
+// server/mongodb/models/post.js
+
 import mongoose from 'mongoose';
 
 const Post = new mongoose.Schema({
-  /* name: { type: String, required: true }, */
+  userID: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
   prompt: { type: String, required: true },
   photo: { type: String, required: true },
 });

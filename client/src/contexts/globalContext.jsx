@@ -8,6 +8,7 @@ export default function Container({ children }) {
   const [selectedComponent, setSelectedComponent] = useState('userphotos');
   const [showPassword, setShowPassword] = useState(false);
   const [user, setUser] = useState(null);
+  const [post, setPost] = useState(null);
 
   const closeModal = () => {
     setShowRegister(false);
@@ -37,6 +38,8 @@ export default function Container({ children }) {
     setUser,
     handleLogout,
     togglePasswordVisibility,
+    post,
+    setPost,
   };
 
   return (
