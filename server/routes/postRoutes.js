@@ -53,7 +53,7 @@ router.post('/', verifyToken, async (req, res) => {
 // Add a console.error to log any errors that occur during the process
 router.get('/', async (req, res) => {
   try {
-    const posts = await Post.find({});
+    const posts = await Post.find().populate('userID');
     res.status(200).json({ success: true, data: posts });
   } catch (err) {
     console.error('Error fetching posts:', err); // Add a console.error to log any errors that occurred during the process
