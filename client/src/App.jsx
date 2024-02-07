@@ -25,7 +25,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Route for the Home page */}
+        {/* Route for the Home page. */}
         <Route path='/' element={<Home />} />
 
         {/* Route for the CreatePost page */}

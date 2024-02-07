@@ -6,13 +6,14 @@ import { SlSocialInstagram } from 'react-icons/sl';
 import { TiSocialTwitter } from 'react-icons/ti';
 import { TiSocialInstagram } from 'react-icons/ti';
 import { SlSocialFacebook } from 'react-icons/sl';
+import Logo from '../assets/imageAIGeneratorLogo.png';
 import './Footer.scss';
 export const Footer = () => {
   return (
     <footer className='footer'>
       <div className='row'>
         <div className='col'>
-          <img src='../assets/imageAIGeneratorLogo.png' alt='logo' />
+          <img  alt='' src={Logo} />
           <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit.
             Asperiores, ratione ipsam repellat, iure dolore quas error doloribus

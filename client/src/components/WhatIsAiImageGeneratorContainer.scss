@@ -75,17 +75,80 @@
     }
 
     .frame-parent {
-      align-self: stretch;
+      // align-self: stretch;
+
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-      align-items: flex-start;
+      // align-items: flex-start;
       justify-content: space-between;
       padding: 0 var(--padding-11xl);
       font-size: var(--font-size-base);
-
-      .number1-1-parent,
-      .number2-1-parent,
+      
+      .number1-1-parent {
+        border-radius: var(--br-xl);
+        background-color: --background-color_4;
+        width: 21.88rem;
+        overflow: hidden;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        // align-items: center;
+        justify-content: center;
+        padding: 2 var(--padding-3xs);
+        margin: 10px;
+        box-sizing: border-box;
+        gap: var(--gap-61xl);
+        min-height: 31.25rem;
+        // .number1-1-icon {
+        //   align-self: stretch;
+        //   position: relative;
+        //   max-width: 100%;
+        //   overflow: hidden;
+        //   height: 21.94rem;
+        //   flex-shrink: 0;
+        //   object-fit: cover;
+        // }
+        .think-of-a {
+          padding: 10px;
+          align-self: stretch;
+          position: relative;
+          margin: 0;
+        }
+      }
+      .number2-1-parent {
+        border-radius: var(--br-xl);
+        background-color: --background-color_4;
+        width: 21.88rem;
+        overflow: hidden;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2 var(--padding-3xs);
+        margin: 10px;
+        box-sizing: border-box;
+        gap: var(--gap-61xl);
+        max-height: 35.25rem;
+        // .number2-1-icon {
+        //   // align-self: stretch;
+        //   // position: relative;
+        //   // max-width: 100%;
+        //   // overflow: hidden;
+        //   // height: 21.94rem;
+        //   // flex-shrink: 0;
+        //   // object-fit: cover;
+        // }
+        .think-of-a {
+          padding-top: 0px;
+          padding: 10px;
+          margin-bottom: 10px;
+          align-self: stretch;
+          position: relative;
+          margin: 0;
+        }
+      }
       .number3-1-parent {
         border-radius: var(--br-xl);
         background-color: var(--background-color_4);
@@ -96,46 +159,48 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 0 var(--padding-3xs);
+        padding: 2 var(--padding-3xs);
+        margin: 10px;
         box-sizing: border-box;
         gap: var(--gap-61xl);
         min-height: 31.25rem;
 
-        .number1-1-icon,
-        .number2-1-icon,
-        .number3-1-icon {
-          align-self: stretch;
-          position: relative;
-          max-width: 100%;
-          overflow: hidden;
-          flex-shrink: 0;
-          object-fit: cover;
-        }
+        // .number1-1-icon,
+        // .number2-1-icon,
+        // .number3-1-icon {
+        //   align-self: stretch;
+        //   position: relative;
+        //   max-width: 100%;
+        //   overflow: hidden;
+        //   flex-shrink: 0;
+        //   object-fit: cover;
+        // }
 
         .think-of-a {
+          padding: 10px;
           align-self: stretch;
           position: relative;
           margin: 0;
         }
       }
 
-      .number1-1-parent {
-        .number1-1-icon {
-          height: 21.94rem;
-        }
-      }
+      // .number1-1-parent {
+      //   .number1-1-icon {
+      //     height: 21.94rem;
+      //   }
+      // }
 
-      .number2-1-parent {
-        .number2-1-icon {
-          height: 20.5rem;
-        }
-      }
+      // .number2-1-parent {
+      //   .number2-1-icon {
+      //     height: 20.5rem;
+      //   }
+      // }
 
-      .number3-1-parent {
-        .number3-1-icon {
-          height: 23.38rem;
-        }
-      }
+      // .number3-1-parent {
+      //   .number3-1-icon {
+      //     height: 23.38rem;
+      //   }
+      // }
     }
   }
 }

@@ -54,7 +54,10 @@ footer {
   border-bottom: 1px solid #ccc;
   margin: 20px 0;
 }
-
+ul {
+  margin: 0;
+  padding: 0;
+}
 ul li {
   list-style: none;
   margin-bottom: 12px;
@@ -99,17 +102,28 @@ form button .fas {
   color: #ccc;
 }
 
-.social-icons .fab {
+.social-icons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 10px;
+}
+
+.social-icons svg {
+  display: flex;
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  border: 1px solid white;
   text-align: center;
-  line-height: 40px;
-  font-size: 20px;
   color: #000;
   background: #fff;
   margin-right: 15px;
   cursor: pointer;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0.5rem;
+
 }
 
 hr {
@@ -131,14 +145,186 @@ hr {
   position: absolute;
   top: 25px;
   left: 0;
+  overflow: hidden;
 }
 
 .underline span {
   width: 15px;
   height: 100%;
-  background-color: #fff;
+  background: #fff;
   border-radius: 3px;
   position: absolute;
   top: 0;
-  left: 10px;
+  left: 10px; 
+  animation: moving 2s linear infinite;
+ 
 }
+
+@keyframes moving {
+  0% { left: -20px;}
+  100% { left:100%;}
+}
+
+
+// .footer {
+//   display: flex;
+//   flex-direction: row;
+//   flex-wrap: wrap;
+//   justify-content: space-around;
+//   flex: 1;
+//   align-self: stretch;
+//   background: linear-gradient(180deg, #000, #14181b);
+//   overflow: hidden;
+//   align-items: flex-start;
+//   padding: var(--padding-35xl) var(--padding-51xl);
+//   text-align: left;
+//   font-size: var(--font-size-base);
+//   color: $color_1; // Assuming $color_1 is defined in your variables
+//   font-family: $font-family_2; // Assuming $font-family_2 is defined in your variables
+//   .subfooter {
+//     display: flex;
+//     flex-direction: row;
+//     flex-wrap: wrap;
+//     justify-content: space-between;
+//     flex: 1;
+//     flex-shrink: 0;
+//     align-items: center;
+//     .theteam {
+//       display: flex;
+//       flex-direction: column;
+//       justify-content: flex-start;
+//       gap: var(--gap-3xs);
+//       flex-shrink: 0;
+//       align-items: center;
+//       .the-team {
+//         margin: 0;
+//         position: relative;
+//         font-size: inherit;
+//         font-weight: 400;
+//         font-family: $font-family_1; // Assuming $font-family_1 is defined in your variables
+//       }
+//       .teammembername-parent {
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: flex-start;
+//         gap: var(--gap-3xs);
+//         align-self: stretch;
+//         align-items: flex-start;
+//         font-size: var(--font-size-xs);
+//         .teammembername {
+//           display: flex;
+//           flex-direction: row;
+//           align-items: center;
+//           justify-content: center;
+//           gap: var(--gap-3xs);
+
+//           .Rialfill {
+
+//           }
+
+//           .copyright-icon {
+//             position: relative;
+//             width: 1.56rem;
+//             height: 1.56rem;
+//             overflow: hidden;
+//             flex-shrink: 0;
+//             object-fit: cover;
+
+//           }
+//           .the-team {
+//             margin: 0;
+//             position: relative;
+//             font-size: inherit;
+//             font-weight: 400;
+//             font-family: $font-family_1; // Assuming $font-family_1 is defined in your variables
+//           }
+//         }
+//       }
+//     }
+//     .logofooter {
+//       flex-shrink: 0;
+//       display: flex;
+//       flex-direction: column;
+//       align-items: center;
+//       justify-content: flex-start;
+//       gap: var(--gap-6xs);
+//       text-align: center;
+//       font-size: var(--font-size-21xl);
+//       .logofooter-child {
+//         text-decoration: none;
+//         position: relative;
+//         width: 16.25rem;
+//         height: 5rem;
+//         background-image: $background-image_1; // Assuming $background-image_1 is defined in your variables
+//         background-size: cover;
+//         background-repeat: no-repeat;
+//         background-position: top;
+//         cursor: pointer;
+//       }
+//       .thanks-for-watching-container {
+//         margin: 0;
+//         position: relative;
+//         .thanks {
+//           display: block;
+//         }
+//         .for-watching {
+//           display: block;
+//           font-size: var(--font-size-3xs);
+//         }
+//       }
+//       .all-rights-reserved {
+//         margin: 0;
+//         position: relative;
+//         font-size: var(--font-size-xs);
+//         text-align: left;
+//       }
+//     }
+//   }
+//   .friendlylinks {
+//     display: flex;
+//     align-items: center;
+//     gap: var(--gap-3xs);
+//     flex-shrink: 0;
+//     flex-direction: column;
+//     justify-content: flex-start;
+//     .theteam {
+//       display: flex;
+//       flex-direction: column;
+//       justify-content: flex-start;
+//       gap: var(--gap-3xs);
+//       flex-shrink: 0;
+//       align-items: center;
+//       .the-team {
+//         margin: 0;
+//         position: relative;
+//         font-size: inherit;
+//         font-weight: 400;
+//         font-family: $font-family_1; // Assuming $font-family_1 is defined in your variables
+//       }
+//       .teammembername-parent {
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: flex-start;
+//         gap: var(--gap-3xs);
+//         align-self: stretch;
+//         align-items: flex-start;
+//         font-size: var(--font-size-xs);
+//         .teammembername {
+//           display: flex;
+//           flex-direction: row;
+//           align-items: center;
+//           justify-content: center;
+//           gap: var(--gap-3xs);
+//           .copyright-icon {
+//             position: relative;
+//             width: 1.56rem;
+//             height: 1.56rem;
+//             overflow: hidden;
+//             flex-shrink: 0;
+//             object-fit: cover;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
