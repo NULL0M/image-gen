@@ -6,9 +6,9 @@ import { downloadImage } from '../utils';
 import './Card.scss';
 
 import { MyContext } from '../contexts/context';
-const Card = ({ _id, prompt, photo, positionInGrid }) => {
-  const { post } = useContext(MyContext);
-  console.log(post);
+const Card = ({ _id, prompt, userID, photo, positionInGrid }) => {
+  // const { post } = useContext(MyContext);
+  // console.log(post);
   return (
     <div className={`card ${getImageClass(positionInGrid)}`}>
       <img className='card-image' src={photo} alt={prompt} />
@@ -18,7 +18,7 @@ const Card = ({ _id, prompt, photo, positionInGrid }) => {
 
         <div className='user-details-container'>
           <div className='user-avatar'></div>
-          <p className='user-name'>{post?.data?.userID.user}</p>
+          <p className='user-name'>{userID ? userID.user : 'no data'}</p>
         </div>
 
         <button

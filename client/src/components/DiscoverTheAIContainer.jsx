@@ -11,6 +11,7 @@ const RenderCards = ({ data, title }) => {
   };
 
   if (data?.length > 0) {
+    // console.log('what is in data', data[0]);
     return data.map((post, index) => (
       <Card
         key={post._id}
@@ -57,6 +58,7 @@ const DiscoverTheAIContainer = () => {
 
       if (response.ok) {
         const result = await response.json();
+        // console.log('result of post', result.data);
         if (result.data) {
           setAllPosts(result.data.reverse());
         } else {
@@ -65,6 +67,7 @@ const DiscoverTheAIContainer = () => {
       }
     } catch (err) {
       alert(err);
+      s;
     } finally {
       setLoading(false);
     }

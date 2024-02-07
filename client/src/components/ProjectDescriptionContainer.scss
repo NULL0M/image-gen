@@ -1,10 +1,26 @@
-.corem-ipsum-dolor {
+@import '../styles/variables';
+
+.entranceDescription {
   margin: 0;
-  width: 48.56rem;
+
   position: relative;
-  font-size: var(--font-size-xl);
-  font-family: var(--font-pathway-gothic-one);
+  // font-size: var(--font-size-11xl);
+  font-family: var(--font-family_2);
+  word-spacing: 0.4rem;
   color: var(--color-white);
+  text-align: left;
+  display: inline-block;
+  font-weight: 200;
+}
+.paragraphDescription {
+  margin: 0;
+  max-width: 80rem;
+  position: relative;
+  font-size: var(--font-size-11xl);
+  font-family: var(--font-family_2);
+  word-spacing: 0.4rem;
+  color: var(--color-white);
+  font-weight: 200;
   text-align: left;
   display: inline-block;
 }
