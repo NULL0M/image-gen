@@ -76,7 +76,7 @@
       font-size: var(--font-size-base);
       .number1-1-parent {
         border-radius: var(--br-xl);
-        background-color: $background-color_4;
+        background-color: --background-color_4;
         width: 21.88rem;
         overflow: hidden;
         flex-shrink: 0;
@@ -105,7 +105,7 @@
       }
       .number2-1-parent {
         border-radius: var(--br-xl);
-        background-color: $background-color_4;
+        background-color: --background-color_4;
         width: 21.88rem;
         overflow: hidden;
         flex-shrink: 0;
@@ -134,7 +134,7 @@
       }
       .number3-1-parent {
         border-radius: var(--br-xl);
-        background-color: $background-color_4;
+        background-color: --background-color_4;
         width: 18.75rem;
         overflow: hidden;
         flex-shrink: 0;
