@@ -1,5 +1,5 @@
 //client/src/pages/UserPage.jsx
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { MyContext } from '../contexts/context';
 import Header from '../components/Header';
 import UserDetails from '../components/UserDetails';
@@ -8,10 +8,15 @@ import UserPhotos from '../components/UserPhotos';
 
 import './UserPage.scss';
 
-// Functional component definition for the UserPage.
 const UserPage = () => {
   const { user, selectedComponent, setSelectedComponent } =
     useContext(MyContext);
+
+  const [userData, setUserData] = useState({
+    username: user?.username || '',
+    email: user?.email || '',
+    password: user?.password || '',
+  });
 
   const renderSelectedComponent = () => {
     switch (selectedComponent) {
@@ -24,18 +29,22 @@ const UserPage = () => {
     }
   };
 
-  console.log(user);
   return (
     <div className='userpage'>
       <main className='main'>
         <Header />
-
         <section className='usercontainer'>
           <section className='userprofile'>
             <img className='userphoto-icon' alt='' src='/userphoto@2x.png' />
             <div className='useridentification'>
-              <h2 className='user'>user</h2>
-              <h3 className='email'>Email</h3>
+              {user ? (
+                <>
+                  <h2 className='user'>{userData.username}</h2>
+                  <h3 className='email'>{userData.email}</h3>
+                </>
+              ) : (
+                <div>Loading...</div>
+              )}
             </div>
           </section>
           <section className='usercontent'>
@@ -46,8 +55,6 @@ const UserPage = () => {
           </section>
         </section>
       </main>
-
-      {/* Footer component for maintaining a consistent page layout */}
     </div>
   );
 };

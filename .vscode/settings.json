@@ -2,6 +2,7 @@
   "cSpell.words": [
     "aboutmeuser",
     "agreementcontainer",
+    "buttonstartcreating",
     "cloudinary",
     "createaccountpage",
     "createpost",
@@ -19,7 +20,12 @@
     "navegationbar",
     "termsandprivacypolicy",
     "theproject",
+    "usercontainer",
+    "usercontent",
     "userdata",
-    "userpage"
+    "useridentification",
+    "userlibrarycontainer",
+    "userpage",
+    "userphoto"
   ]
 }

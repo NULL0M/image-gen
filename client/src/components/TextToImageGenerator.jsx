@@ -36,15 +36,18 @@ export const TextToImageGenerator = () => {
       try {
         setGeneratingImg(true);
         setShowImage(false);
-        const response = await fetch('http://localhost:8090/api/v1/dalle', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            prompt: form.prompt,
-          }),
-        });
+        const response = await fetch(
+          'https://image-aigenerator.onrender.com/api/v1/dalle',
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              prompt: form.prompt,
+            }),
+          }
+        );
 
         const data = await response.json();
         setForm({ ...form, photo: `data:image/jpeg;base64,${data.photo}` });
@@ -66,14 +69,17 @@ export const TextToImageGenerator = () => {
       setLoading(true);
 
       try {
-        const response = await fetch('http://localhost:8090/api/v1/post', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': localStorage.getItem('token'),
-          },
-          body: JSON.stringify({ ...form }),
-        });
+        const response = await fetch(
+          'https://image-aigenerator.onrender.com/api/v1/post',
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': localStorage.getItem('token'),
+            },
+            body: JSON.stringify({ ...form }),
+          }
+        );
 
         if (!response.ok) {
           throw new Error(`The server responded with status${response.status}`);

@@ -1,5 +1,4 @@
 // image-gen/client/src/App.jsx
-// Importing necessary dependencies from the React library for application setup.
 import { useEffect } from 'react';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 

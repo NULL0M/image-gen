@@ -9,7 +9,7 @@ export default function ForgotPassword({ openRegisterModal }) {
   const handleForgotPassword = async () => {
     try {
       const response = await fetch(
-        'http://localhost:8090/api/v1/reset-password/forgot-password',
+        'https://image-aigenerator.onrender.com/api/v1/reset-password/forgot-password',
         {
           method: 'POST',
           headers: {

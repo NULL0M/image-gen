@@ -20,13 +20,16 @@ export default function LoginPage({ openRegisterModal }) {
     };
 
     try {
-      const response = await fetch('http://localhost:8090/api/v1/user/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(loginInfo),
-      });
+      const response = await fetch(
+        'https://image-aigenerator.onrender.com/api/v1/user/login',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(loginInfo),
+        }
+      );
 
       const results = await response.json();
 

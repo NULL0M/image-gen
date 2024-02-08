@@ -1,15 +1,13 @@
-// src/components/Header.jsx
 import React, { useContext } from 'react';
-import { Link, Navigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { MyContext } from '../contexts/context';
 import Logo from '../assets/imageAIGeneratorLogo.png';
 import LoginPage from './LoginPage';
 import CreateAccountPage from './CreateAccountPage';
-import { useNavigate } from 'react-router-dom';
+
 import './Header.scss';
 
 function Header() {
-  const navigate = useNavigate();
   const {
     user,
     showRegister,
@@ -29,11 +27,11 @@ function Header() {
     setShowLogin(false);
   };
 
-  // Function to clear locally stored token
-  const clearStoredToken = () => {
+  // Function to clear locally stored token and redirect to home page
+  const handleLogoutAndRedirect = () => {
     // Remove locally stored token
     localStorage.removeItem('token');
-    navigate('/');
+    handleLogout();
   };
 
   return (
@@ -57,18 +55,16 @@ function Header() {
                   <Link className='generate' to='/userpage'>
                     User Page
                   </Link>
-                  <Link className='generate' onClick={handleLogout}>
+                  <Link
+                    className='generate'
+                    onClick={handleLogoutAndRedirect}
+                    to='/'>
                     Log Out
                   </Link>
                 </>
               ) : (
                 <>
-                  <Link
-                    className='generate'
-                    onClick={() => {
-                      openLoginModal();
-                      clearStoredToken();
-                    }}>
+                  <Link className='generate' onClick={openLoginModal}>
                     Log In
                   </Link>
                 </>
