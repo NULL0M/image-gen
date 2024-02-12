@@ -2,6 +2,7 @@
 import { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { MyContext } from '../contexts/context';
+import baseURL from '../config/api';
 import { IoMdCloseCircle } from 'react-icons/io';
 import { TbEye, TbEyeClosed } from 'react-icons/tb';
 import './LoginPage.scss';
@@ -20,16 +21,13 @@ export default function LoginPage({ openRegisterModal }) {
     };
 
     try {
-      const response = await fetch(
-        'https://image-aigenerator.onrender.com/api/v1/user/login',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(loginInfo),
-        }
-      );
+      const response = await fetch(baseURL + '/api/v1/user/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(loginInfo),
+      });
 
       const results = await response.json();
 

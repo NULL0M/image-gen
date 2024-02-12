@@ -2,6 +2,7 @@
 
 import { useState, useContext } from 'react';
 import { MyContext } from '../contexts/context';
+import baseURL from '../config/api';
 import './UserDetails.scss';
 
 const UserDetails = ({ _id, prompt, userID, photo, positionInGrid }) => {
@@ -28,7 +29,7 @@ const UserDetails = ({ _id, prompt, userID, photo, positionInGrid }) => {
     e.preventDefault();
     try {
       const response = await fetch(
-        `https://image-aigenerator.onrender.com/api/v1/user/users/${userData.user}`
+        `${baseURL}/api/v1/user/users/${userData.username}`
       );
       if (response.ok) {
         const userDataFromServer = await response.json();

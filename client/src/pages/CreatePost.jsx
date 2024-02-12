@@ -8,7 +8,7 @@ import './CreatePost.scss';
 const CreatePost = () => {
   // Rendering the CreatePost page with components for text-to-image generation and explanatory content.
   return (
-    <div className='theproject'>
+    <div className='theproject' id='top'>
       {/* Component for converting text to images */}
       <TextToImageGenerator />
 

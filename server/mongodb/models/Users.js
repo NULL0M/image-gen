@@ -20,6 +20,15 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+
+  generateImageCount: {
+    count: {
+      type: Number,
+      default: 0,
+      min: 0,
+      max: 15,
+    },
+  },
 });
 
 export const UserModel = mongoose.model('User', UserSchema);

@@ -13,7 +13,11 @@ export const Footer = () => {
     <footer className='footer'>
       <div className='row'>
         <div className='col'>
-          <img alt='' src={Logo} />
+          <a href='#top'>
+            {' '}
+            {/* Link para voltar ao topo */}
+            <img alt='' src={Logo} />
+          </a>
           <p className='sentence'>
             Unlock the power of creativity with ImageAIGenerator: Where
             innovation meets imagination, crafting images through the lens of
