@@ -1,3 +1,25 @@
+// client/src/styles/_media-queries.scss
+
+// header
+
+@media screen and (min-width: 961px) {
+  .menulinks {
+    display: flex;
+  }
+  .burguermenu {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .burguermenu {
+    display: flex;
+  }
+}
+// .navegationbar {
+//   display: none;
+// }
+
 // Footer
 
 @media screen and (max-width: 960px) {
@@ -22,32 +44,28 @@
   }
 }
 
+// home page
+
 @media screen and (max-width: 960px) {
   .maincontainer {
-    gap: var(--gap-31xl);
+    gap: var(--gap-17xl);
     align-items: center;
     justify-content: space-between;
     flex: unset;
     align-self: stretch;
   }
+  .maincontainer-parent,
   .frame-icon {
     align-items: center;
     justify-content: space-between;
     gap: var(--gap-0);
+  }
+  .frame-icon {
     flex: unset;
     align-self: stretch;
   }
   .maincontainer-parent {
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--gap-0);
     flex-direction: column;
-  }
-  .main3 {
-    gap: var(--gap-0);
-    padding-left: var(--padding-21xl);
-    padding-right: var(--padding-21xl);
-    box-sizing: border-box;
   }
 }
 @media screen and (max-width: 420px) {
@@ -60,28 +78,26 @@
     text-align: justify;
   }
   .maincontainer {
-    gap: var(--gap-31xl);
-  }
-  .main3 {
-    padding-left: var(--padding-xl);
-    padding-right: var(--padding-xl);
-    box-sizing: border-box;
+    gap: var(--gap-17xl);
   }
 }
 
+// AIImageGenerationContainer
 @media screen and (max-width: 1200px) {
   .thefutureisaidescription {
     padding: 0 var(--padding-41xl);
     box-sizing: border-box;
   }
 }
+
 @media screen and (max-width: 960px) {
   .a-fully-integrated {
     font-size: var(--font-size-33xl);
   }
   .thefutureisaiimage {
-    flex: unset;
+    flex: 1;
     align-self: stretch;
+    align-items: center;
   }
   .thefutureisaidescriptioncontai {
     align-items: center;

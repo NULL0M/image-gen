@@ -1,5 +1,6 @@
 // client/src/pages/forgotPassword.jsx
 import React, { useState } from 'react';
+import baseURL from '../config/api';
 import Header from '../components/Header';
 import './forgotPassword.scss';
 
@@ -9,7 +10,7 @@ export default function ForgotPassword({ openRegisterModal }) {
   const handleForgotPassword = async () => {
     try {
       const response = await fetch(
-        'https://image-aigenerator.onrender.com/api/v1/reset-password/forgot-password',
+        `${baseURL}/api/v1/reset-password/forgot-password`, // Fixed the interpolation
         {
           method: 'POST',
           headers: {
@@ -28,7 +29,7 @@ export default function ForgotPassword({ openRegisterModal }) {
   };
 
   return (
-    <div className='forgotPassword'>
+    <div className='forgotPassword' id='top'>
       <Header />
       <main className='main'>
         <div className='forgot-password-page'>

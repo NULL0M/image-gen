@@ -1,11 +1,10 @@
 // image-gen/client/src/components/Card.jsx
-import { useContext } from 'react';
+
 import { download } from '../assets';
 import { downloadImage } from '../utils';
 
 import './Card.scss';
 
-import { MyContext } from '../contexts/context';
 const Card = ({ _id, prompt, userID, photo, positionInGrid }) => {
   // const { post } = useContext(MyContext);
   // console.log(post);

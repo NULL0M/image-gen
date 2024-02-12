@@ -1,3 +1,5 @@
+// client/src/components/Header.jsx
+
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { MyContext } from '../contexts/context';
@@ -69,6 +71,47 @@ function Header() {
                   </Link>
                 </>
               )}
+            </div>
+            {/* Burger Menu Section */}
+            <div className='burguermenu'>
+              {/* Your burger menu content */}
+              <input type='checkbox' id='active' />
+              <label htmlFor='active' className='menuToggle'>
+                <span></span>
+              </label>
+              <label htmlFor='active' className='close'></label>
+
+              <div className='wrapper'>
+                {/* Your links here */}
+                <Link to='/' className='generate'>
+                  Home
+                </Link>
+                {user ? (
+                  <>
+                    <Link to='/createpost' className='generate'>
+                      Generate
+                    </Link>
+                    <Link to='/theproject' className='generate'>
+                      The Project
+                    </Link>
+                    <Link to='/userpage' className='generate'>
+                      User Page
+                    </Link>
+                    <Link
+                      to='/'
+                      className='generate'
+                      onClick={handleLogoutAndRedirect}>
+                      Log Out
+                    </Link>
+                  </>
+                ) : (
+                  <>
+                    <Link to='/' className='generate' onClick={openLoginModal}>
+                      Log In
+                    </Link>
+                  </>
+                )}
+              </div>
             </div>
           </nav>
         </div>

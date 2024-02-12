@@ -3,6 +3,7 @@
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { MyContext } from '../contexts/context';
+import baseURL from '../config/api';
 import { IoMdCloseCircle } from 'react-icons/io';
 import { TbEye, TbEyeClosed } from 'react-icons/tb';
 import './CreateAccountPage.scss';
@@ -19,14 +20,11 @@ export default function CreateAccountPage() {
       password: e.target.password.value,
     };
     try {
-      const response = await fetch(
-        'https://image-aigenerator.onrender.com/api/v1/user/register',
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(user),
-        }
-      );
+      const response = await fetch(baseURL + '/api/v1/user/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(user),
+      });
       if (response.ok) {
         alert('Account created successfully! You can now log in.');
         closeModal(); // Closes the modal after successful registration

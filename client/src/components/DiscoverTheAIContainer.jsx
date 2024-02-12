@@ -1,5 +1,6 @@
 // src/components/DiscoverTheAIContainer.jsx
 import React, { useEffect, useState } from 'react';
+import baseURL from '../config/api';
 import Card from './Card';
 import { ButtonStartCreating } from './ButtonStartCreating';
 import './DiscoverTheAIContainer.scss';
@@ -49,15 +50,12 @@ const DiscoverTheAIContainer = () => {
   const fetchPosts = async () => {
     setLoading(true);
     try {
-      const response = await fetch(
-        'https://image-aigenerator.onrender.com/api/v1/post',
-        {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        }
-      );
+      const response = await fetch(`${baseURL}/api/v1/post`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
 
       if (response.ok) {
         const result = await response.json();
