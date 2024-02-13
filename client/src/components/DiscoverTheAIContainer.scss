@@ -46,13 +46,18 @@
     justify-content: flex-start;
     align-self: stretch;
     overflow: hidden;
-    width: 80%;
+    // width: 80%;
     padding: var(--padding-5xs) var(--padding-xl) var(--padding-4xs);
     gap: var(--gap-31xl);
     border-radius: var(--border-radius-xl);
     background-color: var(--background-color_3);
     opacity: 0.8;
     margin: 2rem;
+    margin-left: 8rem;
+    margin-right: 8rem;
+    margin-bottom: 0rem;
+    margin-top: 1rem;
+    border-radius: 10px;
 
     .describe-search {
       border: 0;
@@ -91,11 +96,12 @@
     }
 
     .grid-container {
+      margin: 6rem;
       display: grid;
       grid-auto-columns: 1fr;
       grid-template-columns: repeat(6, 1fr);
       grid-template-rows: repeat(6, 1fr);
-      gap: 0.5rem;
+      gap: 1rem;
       grid-template-areas:
         'Img1 Img1 Img2 Img3 Img6 Img6'
         'Img1 Img1 Img4 Img5 Img6 Img6'
